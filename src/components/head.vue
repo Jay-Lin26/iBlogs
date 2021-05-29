@@ -5,14 +5,14 @@
 				<div class="head-logo">iBlogs</div>
 				<div>
 					<span>
-						<input class="input" placeholder="喜欢"/>
-						<button class="btn">搜索</button>
+						<input class="input" placeholder="Enter what you want to search"/>
+						<button class="btn">Search</button>
 					</span>
 				</div>
-				<div class="user" v-if="is_name">{{this.$store.state.username}}</div>
+				<div class="user" v-if="whetheLogin">{{this.$store.state.UserName}}</div>
 				<div class="to-login" v-else>
-					<div class="sign" style="color: #00B5AD;" @click="_is_login()">Sign In</div>
-					<div class="join" @click="_is_login()">Join now</div>
+					<div class="sign" style="color: #00B5AD;" @click="pageControl()">Sign In</div>
+					<div class="join" @click="pageControl()">Join now</div>
 				</div>
 			</div>
 			<div class="head-button">
@@ -23,7 +23,7 @@
 					<router-link to="/articledetail" class="about">About</router-link>
 				</div>
 			</div>
-			<Register v-show="this.$store.state.is_login"></Register>
+			<Register v-show="this.$store.state.PageStatus"></Register>
 		</div>
 	</div>
 </template>
@@ -35,27 +35,26 @@ export default{
 	components:{Register},
 	data:function(){
 		return{
-			is_login: this.$store.state.is_login,
-			is_name: false,
+			//是否展示用户名的状态
+			whetheLogin: false,
 		}
 	},
 	methods: {
-		// ss: function(){
-		// 	this.common.Msgs("暂未开放", 'warning')
-		// }
-		now: function() {
-			let name = this.$store.state.username
+		//判断用户是否登录
+		judgeUser: function() {
+			let name = this.$store.state.UserName
 			if (name != null){
-				this.is_name = true
+				this.whetheLogin = true
 			}
-		},
-		_is_login: function(){
-			let b = true
-			this.$store.commit('cancel_login', b)
+			},
+		//打开或关闭登录、注册页面
+		pageControl: function(){
+			let status = true
+			this.$store.commit('changePage', status)
 		}
 	},
 	mounted() {
-		this.now()
+		this.judgeUser()
 	}
 }
 </script>
@@ -95,7 +94,7 @@ export default{
 		cursor: pointer;
 		width: 40px;
 		height: 39px;
-		border: 1px;
+		border: 0px solid #eeeeee;
 		border-top-right-radius: 4px;
 		border-bottom-right-radius: 4px;
 		background: url(../assets/search.png) #00B5AD;

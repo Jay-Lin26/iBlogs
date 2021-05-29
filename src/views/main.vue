@@ -8,7 +8,7 @@
 			<div class="index-body">
 				<div class="index-content">
 					<div class="c-left">
-						<div class="show-card" v-for="item in info" v-bind:key="item.id">
+						<div class="show-card" v-for="item in leftList" v-bind:key="item.id">
 							<div class="card-in">
 								<div class="image">
 									<img v-bind:src="item.img_url" />
@@ -38,14 +38,14 @@ export default{
 	components:{Thehead, Thefoot},
 	data: function(){
 		return{
-			info: {}
+			leftList: {}
 		}
 	},
 	mounted() {
+		//获取首页数据
 		index().then(result => {
-			this.info = result.data
+			this.leftList = result.data
 		})
-		// is_login()
 	}
 }	
 </script>

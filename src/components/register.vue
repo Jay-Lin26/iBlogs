@@ -2,12 +2,12 @@
 	<div id="alert-main">
 		<div class="alert-body">
 			<div class="login-box">
-				<button class="cancel" @click="cancel()"></button>
-				<div class="alert-title" v-if="is_login">Join Now</div>
+				<button class="cancel" @click="closePage()"></button>
+				<div class="alert-title" v-if="joinPage">Join Now</div>
 				<div class="alert-title" v-else>Sign in</div>
 				<div><input class="alert-email" placeholder="Email" v-model="email"/></div>
 				<div><input class="alert-pwd" type="password" placeholder="Password" v-model="password"/></div>
-				<div v-if="is_login">
+				<div v-if="joinPage">
 					<span>
 						<input class="alert-code" placeholder="Verification Code" v-model="code"/>
 						<button class="c-btn" @click="get_code()">Get Code</button>
@@ -15,7 +15,7 @@
 					<button class="r-btn" @click="register()">Join Now</button>
 					<div style="font-size: 14px;">
 						<label style="margin-right: 15px;">Already a member？</label>
-						<label style="color: #00B5AD; cursor: pointer;" @click="is_login=!is_login">Sign in</label>
+						<label style="color: #00B5AD; cursor: pointer;" @click="joinPage=!joinPage">Sign in</label>
 					</div>
 				</div>
 				<div v-else>
@@ -24,7 +24,7 @@
 						<div style="color: #00B5AD; cursor: pointer; margin-bottom: 24px;">Forget Password？</div>
 						<div>
 							<label style="margin-right: 15px;">Not a member？</label>
-							<label style="color: #00B5AD; cursor: pointer;" @click="is_login=!is_login">Join Now</label>
+							<label style="color: #00B5AD; cursor: pointer;" @click="joinPage=!joinPage">Join Now</label>
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,9 @@ export default {
 			email: "",
 			code: "",
 			password: "",
-			is_login: true
+			//head组件控制打开页面
+			joinPage: this.$store.state.PageStatus,
+			//当前页面切换
 		}
 	},
 	methods: {
@@ -61,11 +63,9 @@ export default {
 					// this.common.Msgs(result.message, 'success')
 					sessionStorage.setItem('accesstoken', result.Access_token)
 					this.$store.commit('setname', result.name)
-					// let _this = this
 					setInterval(function(){
-						// _this.$router.push('/')
 						location.reload()
-					}, 1000)
+					}, 100)
 				}else{
 					// this.common.Msgs(result.message, 'error')
 				}
@@ -96,9 +96,9 @@ export default {
 			})
 		},
 		// 取消登录
-		cancel : function(){
-			let b = false
-			this.$store.commit('cancel_login', b)
+		closePage : function(){
+			let status = false
+			this.$store.commit('changePage', status)
 		}
 	}
 }

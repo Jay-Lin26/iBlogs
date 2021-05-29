@@ -13,19 +13,19 @@ const routes = [
     path: "/",
     name: "index",
     component: () => import("../views/main.vue"),
-	meta: {title: "iBlogs"}
+  meta: {title: "iBlogs"}
   },
   {
     path: "/articledetail",
     name: "ArticleDetail",
     component: () => import("../views/articleDetail.vue"),
-	meta: {title: "文章详情"}
+  meta: {title: "文章详情"}
   },
   {
     path: "/main",
     name: "Main",
     component: () => import("../views/main.vue"),
-  	meta: {title: "iBlogs"}
+    meta: {title: "iBlogs"}
   },
 ];
 

@@ -5,7 +5,7 @@
 			<div class="body-content">
 				<div class="userinfo">
 					<div class="u-wel">Welcome</div>
-					<div class="u-name" style="font-size: 16px; color: #00B5AD;">{{this.$store.state.username}}</div>
+					<div class="u-name" style="font-size: 16px; color: #00B5AD;">{{this.$store.state.UserName}}</div>
 					<div class="u-time">Member since 9/12/2020</div>
 					<div class="u-button" style="color: #00B5AD;"><a href="#">Edit Profile</a></div>
 					<div class="u-hav">
@@ -30,7 +30,6 @@
 	</div>
 </template>
 <script>
-import {is_login} from "../utils/common.js";
 import {blog_detail} from "../http/api.js";
 import Thehead from "../components/head.vue";
 import Thefoot from "../components/footer.vue";
@@ -44,11 +43,11 @@ export default {
 		}
 	},
 	mounted() {
+		//获取博客内容
 		blog_detail().then(result => {
 			this.show_title = result.title,
 			this.show_content = result.content
 		})
-		is_login()
 	}
 };
 </script>
@@ -122,5 +121,6 @@ export default {
 		color: #909399;
 		padding-left: 50px;
 		padding-right: 30px;
+		min-height: 100vh;
 	}
 </style>
