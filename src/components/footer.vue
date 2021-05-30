@@ -1,21 +1,13 @@
 <template>
 	<div id="ft">
 		<div class="ft-box">
-			<div class="ft-content">
-				<table class="ft-table">
-					<tr id="tr1">
-						<td class="td1"><div></div></td>
-						<td class="td2"><div></div></td>
-						<td class="td3">User Story<p/>Choice is more important than effort</td>
-						<td class="td4">About Us<p/>Privacy Policy<p/>Common Problems<p/></td>
-					</tr>
-					<tr id="tr2">
-						<td colspan="4">
-							Copyright @ 2020-2021 Linse Designed by Linse
-						</td>
-					</tr>
-				</table>
+			<div class="ft-main">
+				<div class="ft-image"><div></div></div>
+				<div class="ft-image"><div></div></div>
+				<div class="ft-des">User StoryChoice is more important than effort</div>
+				<div class="ft-des">About Us Privacy Policy Common Problems<p/></div>
 			</div>
+			<div class="ft-copy">Copyright @ 2020-2021 Linse Designed by Linse</div>
 		</div>
 	</div>
 </template>
@@ -27,40 +19,40 @@ export default{
 </script>
 
 <style>
-	#ft{
-		background-color: #000000;
-	}
+	#ft {background-color: black;}
 	.ft-box {
 		font-size: 12px;
 		width: 1000px;
-		height: 200px;
+		/* height: 150px; */
 		margin: 0 auto;
 	}
-	.ft-content{
-		height: 150px;
-		padding-top: 3px;
+	.ft-main {
+		display: flex;
+		height: 120px;
+		padding-top: 10px;
 	}
-	.ft-table {
-		width: 100%;
-		color: #EEEEEE;
+	.ft-des {
+		width: 25%;
+		color: #f1f1f1;
 		text-align: center;
-		margin-top: 20px;
+		line-height: 110px;
 	}
-	.td1 div, .td2 div{
+	.ft-image div {
 		width: 110px;
 		height: 110px;
-		margin-left: 20px;
-		border: #00B5AD;
+		margin: auto;
 		border-radius: 4px;
 		background: url("https://pic.imgdb.cn/item/60abc01a2a0bae8e0ce9b225.png");
 		background-size: cover;
 	}
-	.td3, .td4 {
+	.ft-image{
 		width: 25%;
+		height: 110px;
 	}
-	#tr2 td{
+	.ft-copy {
+		color: #f1f1f1;
 		height: 50px;
-		color: #EEEEEE;
+		line-height: 50px;
 		text-align: center;
-	}	
+	}
 </style>

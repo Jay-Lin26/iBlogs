@@ -1,11 +1,11 @@
 <template>
-	<div id="alert-main">
-		<div class="alert-body">
+  <div id="alert-main">
+	<div class="alert-body">
 			<div class="login-box">
 				<button class="cancel" @click="closePage()"></button>
 				<div class="alert-title" v-if="joinPage">Join Now</div>
 				<div class="alert-title" v-else>Sign in</div>
-				<div><input class="alert-email" placeholder="Email" v-model="email"/></div>
+				<div><input class="alert-email" placeholder="Email" v-model="email" @keyup.enter="submit"/></div>
 				<div><input class="alert-pwd" type="password" placeholder="Password" v-model="password"/></div>
 				<div v-if="joinPage">
 					<span>
@@ -34,8 +34,8 @@
 					<div style="margin-bottom: 24px;">*Bonus terms apply</div>
 				</div>
 			</div>
-		</div>
 	</div>
+  </div>
 </template>
 
 <script>
@@ -60,14 +60,14 @@ export default {
 			param.append('password', this.password)
 			login(param).then(result =>{
 				if(result.code === 200){
-					// this.common.Msgs(result.message, 'success')
+					this.$msgs(result.message, 'success')
 					sessionStorage.setItem('accesstoken', result.Access_token)
 					this.$store.commit('setname', result.name)
 					setInterval(function(){
 						location.reload()
 					}, 100)
 				}else{
-					// this.common.Msgs(result.message, 'error')
+					this.$msgs(result.message, 'error')
 				}
 			})
 		},
@@ -79,9 +79,9 @@ export default {
 			params.append('password', this.password)
 			register(params).then(result =>{
 				if (result.code === 200){
-					// this.common.Msgs(result.message, 'success')
+					this.$msgs(result.message, 'success')
 				}else{
-					// this.common.Msgs(result.message, 'error')
+					this.$msgs(result.message, 'error')
 				}
 			})
 		},
@@ -89,9 +89,9 @@ export default {
 		get_code: function(){
 			getCode(this.email).then(result =>{
 				if(result.code === 200){
-					// this.common.Msgs(result.message, 'success')
+					this.$msgs(result.message, 'success')
 				}else{
-					// this.common.Msgs(result.message, 'error')
+					this.$msgs(result.message, 'error')
 				}
 			})
 		},
