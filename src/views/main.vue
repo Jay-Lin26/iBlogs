@@ -165,12 +165,13 @@ export default {
 .card-right {
   margin-top: 12px;
   margin-bottom: 12px;
+  font-size: 14px;
   text-align: center;
 }
 .c-right {
   float: right;
   width: 280px;
-  min-height: 100vh;
+  min-height: 60vh;
   border-radius: 10px;
   background-color: #ffffff;
 }

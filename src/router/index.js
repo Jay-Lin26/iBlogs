@@ -1,5 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Index from "../views/main";
+import ArticleDetail from "../views/articleDetail";
 
 Vue.use(VueRouter);
 
@@ -12,19 +14,19 @@ const routes = [
   {
     path: "/",
     name: "index",
-    component: () => import("../views/main.vue"),
+    component: Index,
     meta: { title: "iBlogs" },
   },
   {
     path: "/articledetail",
     name: "ArticleDetail",
-    component: () => import("../views/articleDetail.vue"),
+    component: ArticleDetail,
     meta: { title: "文章详情" },
   },
   {
     path: "/main",
     name: "Main",
-    component: () => import("../views/main.vue"),
+    component: Index,
     meta: { title: "iBlogs" },
   },
 ];
