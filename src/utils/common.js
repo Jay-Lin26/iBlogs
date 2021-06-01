@@ -1,5 +1,4 @@
 import { Message } from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
 
 export default {
   //自定义消息提示框
