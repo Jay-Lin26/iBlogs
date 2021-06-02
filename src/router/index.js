@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "../views/index";
 import ArticleDetail from "../views/articleDetail";
+import Register from "../components/register";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,12 @@ const routes = [
     name: "index",
     component: Index,
     meta: { title: "iBlogs" },
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: Register,
+    meta: { title: "登录/注册" },
   },
   {
     path: "/articledetail",

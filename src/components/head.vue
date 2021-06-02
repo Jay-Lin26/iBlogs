@@ -88,6 +88,7 @@ export default {
   left: 0px;
   top: 0px;
   width: 100%;
+  font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
 #hd,
 .head-box {
@@ -138,7 +139,6 @@ export default {
 .user {
   margin-top: 30px;
   font-size: 16px;
-  font-family: "楷体";
   color: #00b5ad;
   margin-left: 150px;
   cursor: pointer;

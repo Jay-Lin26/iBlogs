@@ -50,6 +50,14 @@ export default {
       show_content: "",
     };
   },
+  methods: {
+    isLogin: function () {
+      let token = sessionStorage.getItem("accesstoken");
+      if (token == null) {
+        this.$router.push("/register");
+      }
+    },
+  },
   mounted() {
     //获取博客内容
     blog_detail().then((result) => {

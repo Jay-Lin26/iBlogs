@@ -26,6 +26,7 @@
             </div>
           </div>
           <div class="c-right">
+            <div class="book-title">书籍推荐:</div>
             <div class="card-right" v-for="books in bookList" :key="books.id">
               <div class="cr-title">{{ books.name }}</div>
               <div class="cr-desc">{{ books.desc }}</div>
@@ -56,48 +57,18 @@ export default {
         },
         {
           id: 2,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
+          name: "《简明Python教程》》",
+          desc: "入门Python的绝佳Tutorial，从书的目录便可以了解到作者Swaroop C H清晰的行文思路，以及对Python高超的驾驭能力。",
         },
         {
           id: 3,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
+          name: "《集体智慧编程》",
+          desc: "以具体实例的方式来展示Python的编程技巧，受益良多。作者用非常直观的方式向读者展示了人工智能和机器学习中的大量经典的算法。更可贵的是，作者在展示算法时所使用的例子都是网络中非常有代表性的场景，并且很多情况下还会结合一些实际运营的 Web 站点的数据作更进步阐释。",
         },
         {
           id: 4,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
-        },
-        {
-          id: 5,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
-        },
-        {
-          id: 6,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
-        },
-        {
-          id: 7,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
-        },
-        {
-          id: 8,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
-        },
-        {
-          id: 9,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
-        },
-        {
-          id: 0,
-          name: "《程序员修炼之道：从小工到专家》",
-          desc: "由一系列独立的部分组成，涵盖的主题从个人责任、职业发展，知道用于使代码保持灵活、并且易于改编和复用的各种架构技术，利用许多富有娱乐性的奇闻轶事、有思想性的例子及有趣的类比，全面阐释了软件开发的许多不同方面的最佳实践和重大陷阱。",
+          name: "《Python Cookbook中文版第3版》",
+          desc: "这本书可谓Python版《代码大全》。有人说《代码大全》这类书是字典，其实不尽然《代码大全》是高手过招。",
         },
       ],
     };
@@ -113,17 +84,26 @@ export default {
 
 <style>
 .description {
-  height: 90px;
   width: 450px;
   font-size: 13px;
   color: #909399;
-  margin-top: 30px;
+  margin-top: 70px;
+  /* 超过多少行自动隐藏 */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .title {
   color: #00b5ad;
   font-size: 22px;
   height: 30px;
   width: 400px;
+  /* 超过多少行自动隐藏 */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .image,
 .image img {
@@ -162,17 +142,24 @@ export default {
 }
 .cr-desc {
   color: #909399;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 .card-right {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 18px 12px 18px 12px;
   font-size: 14px;
   text-align: center;
+}
+.book-title {
+  font-size: 18px;
+  margin: 18px 12px;
 }
 .c-right {
   float: right;
   width: 280px;
-  min-height: 60vh;
+  min-height: 400px;
   border-radius: 10px;
   background-color: #ffffff;
 }

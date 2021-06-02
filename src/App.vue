@@ -17,12 +17,12 @@ body {
   height: 100%;
   margin: 0 !important;
 }
-#app {
-  font-family: "STXihei";
-}
 #main {
   background-color: #f7f7f7;
   margin-top: 100px;
+  font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  min-height: 100vh;
+  z-index: 3;
 }
 .el-message {
   top: 80% !important;
