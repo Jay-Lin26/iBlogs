@@ -104,7 +104,7 @@ export default {
 .head-logo {
   width: 90px;
   font-size: 35px;
-  font-weight: 700;
+  font-weight: 500;
   color: #00b5ad;
   margin-left: 10px;
   margin-top: 15px;

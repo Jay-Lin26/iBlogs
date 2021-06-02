@@ -188,7 +188,6 @@ export default {
 .index-all {
   min-height: 100vh;
   overflow: hidden;
-  font-family: "楷体";
 }
 .index-banner {
   height: 250px;

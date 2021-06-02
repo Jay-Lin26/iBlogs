@@ -4,10 +4,14 @@
       <div class="ft-main">
         <div class="ft-image"><div></div></div>
         <div class="ft-image"><div></div></div>
-        <div class="ft-des">User StoryChoice is more important than effort</div>
         <div class="ft-des">
-          About Us Privacy Policy Common Problems
-          <p />
+          <p>User Story Choice</p>
+          <p>is more important than effort</p>
+        </div>
+        <div class="ft-des">
+          <p>About Us</p>
+          <p>Privacy Policy</p>
+          <p>Common Problems</p>
         </div>
       </div>
       <div class="ft-copy">Copyright @ 2020-2021 Linse Designed by Linse</div>
@@ -22,10 +26,11 @@ export default {
 
 <style>
 #ft {
-  background-color: black;
+  background-color: #1b1b1b;
+  font-family: "STXihei";
 }
 .ft-box {
-  font-size: 12px;
+  font-size: 14px;
   width: 1000px;
   /* height: 150px; */
   margin: 0 auto;
@@ -39,7 +44,8 @@ export default {
   width: 25%;
   color: #f1f1f1;
   text-align: center;
-  line-height: 110px;
+  line-height: 25px;
+  word-break: break-word;
 }
 .ft-image div {
   width: 110px;

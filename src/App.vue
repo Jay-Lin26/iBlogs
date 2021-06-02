@@ -18,10 +18,7 @@ body {
   margin: 0 !important;
 }
 #app {
-  font-family: "Avenir Next", Calibri, "SF Pro Text", "PingFang SC",
-    "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei",
-    "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif,
-    "楷体";
+  font-family: "STXihei";
 }
 #main {
   background-color: #f7f7f7;
