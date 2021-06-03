@@ -20,7 +20,7 @@ body {
 #main {
   background-color: #f7f7f7;
   margin-top: 100px;
-  font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  font-family: Calibri, "Microsoft YaHei", "黑体", "宋体", sans-serif;
   min-height: 100vh;
   z-index: 3;
 }

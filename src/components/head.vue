@@ -214,7 +214,7 @@ export default {
 .head-button-1 a {
   text-decoration: none;
   color: #000000;
-  font-size: 15px;
+  font-size: 12px;
   margin-left: 10px;
   margin-right: 52px;
 }

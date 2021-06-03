@@ -1,4 +1,3 @@
-//eslint-disable-next-line
 <template>
   <div id="myhome">
     <Thehead></Thehead>
@@ -73,11 +72,24 @@ export default {
       ],
     };
   },
+  methods: {
+    slideshow: function() {
+      let num = 0;
+      setInterval(() => {
+        num++;
+        if (num == 4) {
+          num = 0;
+        }
+        console.log(num);
+      }, 2000);
+    },
+  },
   mounted() {
     //获取首页数据
     index().then((result) => {
       this.leftList = result.data;
     });
+    // this.slideshow();
   },
 };
 </script>
