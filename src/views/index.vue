@@ -3,7 +3,7 @@
     <Thehead></Thehead>
     <div class="index-all">
       <div class="index-banner">
-        <div class="index-banner-1"></div>
+        <div class="banner-image"></div>
       </div>
       <div class="index-body">
         <div class="index-content">
@@ -73,16 +73,17 @@ export default {
     };
   },
   methods: {
-    slideshow: function() {
-      let num = 0;
-      setInterval(() => {
-        num++;
-        if (num == 4) {
-          num = 0;
-        }
-        console.log(num);
-      }, 2000);
-    },
+    // slideshow: function () {
+    //   let banner = document.getElementsByClassName("index-banner");
+    //   let num = 0;
+    //   setInterval(() => {
+    //     num++;
+    //     if (num > 2) {
+    //       num = 0;
+    //     }
+    //     banner[num].className = "active";
+    //   }, 2000);
+    // },
   },
   mounted() {
     //获取首页数据
@@ -192,8 +193,9 @@ export default {
   height: 250px;
   width: 100%;
   padding-top: 20px;
+  position: relative;
 }
-.index-banner-1 {
+.banner-image {
   width: 1000px;
   height: 250px;
   border-radius: 10px;
