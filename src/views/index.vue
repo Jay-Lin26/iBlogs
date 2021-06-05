@@ -2,9 +2,6 @@
   <div id="myhome">
     <Thehead></Thehead>
     <div class="index-all">
-      <div class="index-banner">
-        <div class="banner-image"></div>
-      </div>
       <div class="index-body">
         <div class="index-content">
           <div class="c-left">
@@ -184,23 +181,10 @@ export default {
   padding: 20px 0 20px 0;
   width: 1000px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 .index-all {
   min-height: 100vh;
   overflow: hidden;
-}
-.index-banner {
-  height: 250px;
-  width: 100%;
-  padding-top: 20px;
-  position: relative;
-}
-.banner-image {
-  width: 1000px;
-  height: 250px;
-  border-radius: 10px;
-  margin: 0 auto;
-  background: url("https://pic.imgdb.cn/item/60a87bab6ae4f77d3508f615.png");
-  background-size: cover;
 }
 </style>

@@ -1,10 +1,30 @@
 <template>
   <div id="frontpage">
     <div class="main">
-      <div class="avatar"></div>
-      <div class="name"></div>
-      <div class="inturduce"></div>
-      <div class="callme"></div>
+      <div class="box">
+        <div class="avatar"></div>
+        <div class="name">{{ myName }}</div>
+        <div class="callme">
+          <div class="icon-w"></div>
+          <div class="icon-q"></div>
+          <div class="icon-g"></div>
+          <div class="icon-e"></div>
+        </div>
+        <div class="inturduce">{{ inturduce }}</div>
+        <div class="info">
+          <p>“世界很小，”</p>
+          <p>“城市很大，”</p>
+          <p>“欠缺缘分的人也许....”</p>
+          <p>“终生也不会再见了...”</p>
+          <p style="margin-left: 200px">————闲人有闲</p>
+        </div>
+        <div class="nav-bar">
+          <div class="nav-index" @click="indexclick()">首页</div>
+          <div class="nav-category">分类</div>
+          <div class="nav-music">音乐盒</div>
+          <div class="nav-about">关于我</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -12,19 +32,107 @@
 <script>
 export default {
   name: "frontpage",
+  data: function () {
+    return {
+      myName: "Linse Zhou",
+      inturduce: "想要做到不可替代，你就必须与众不同！"
+    }
+  },
+  methods: {
+    indexclick: function () {
+      this.$router.push('/index')
+    }
+  }
 };
 </script>
 
 <style>
+.nav-index, .nav-category, .nav-music, .nav-about {
+  width: 70px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "宋体";
+  margin-right: 20px;
+  border-radius: 15px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.nav-bar {
+  width: 360px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: flex;
+}
+.info {
+  color: #ffffff;
+  font-size: 22px;
+  font-family: "楷体";
+}
+.inturduce {
+  width: 520px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
+  color: white;
+  font-size: 25px;
+  font-weight: 350;
+  font-family: "楷体";
+}
+.icon-e {background: url("../assets/front-icon/email.png") #ffffff;}
+.icon-q {background: url("../assets/front-icon/QQ.png") #ffffff;}
+.icon-g {background: url("../assets/front-icon/github.png") #ffffff;}
+.icon-w {background: url("../assets/front-icon/weixin.png") #ffffff;}
+.icon-w, .icon-g, .icon-q, .icon-e{
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+}
+.callme {
+  display: flex;
+  height: auto;
+  width: 182px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.name {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "楷体";
+  border-bottom: 1px;
+  margin-bottom: 20px;
+}
 .avatar {
   width: 100px;
   height: 100px;
   margin: 0 auto;
+  margin-bottom: 20px;
   border-radius: 50%;
   background: url("../assets/bgimg/avatar.jpg");
   background-size: cover;
 }
+.box {
+  width: 1200px;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .main {
+  position: relative;
   min-height: 100vh;
   width: auto;
   background: url("../assets/bgimg/front.jpg");

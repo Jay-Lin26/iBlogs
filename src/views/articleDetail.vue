@@ -15,10 +15,10 @@
           <div class="u-hav">
             <div class="u-space"></div>
             <div class="u-hav-1">
-              <router-link to="/blogdetail">Home</router-link>
+              <router-link to="/">Home</router-link>
             </div>
-            <div class="u-hav-2"><router-link to="/">Tag</router-link></div>
-            <div class="u-hav-3"><router-link to="/">Sort</router-link></div>
+            <div class="u-hav-2"><router-link to="/index">Tag</router-link></div>
+            <div class="u-hav-3"><router-link to="/index">Sort</router-link></div>
           </div>
         </div>
         <div class="usershow">
@@ -143,5 +143,8 @@ export default {
   padding-left: 50px;
   padding-right: 30px;
   min-height: 100vh;
+}
+.body-content {
+  margin-top: 120px;
 }
 </style>

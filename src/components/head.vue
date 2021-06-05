@@ -28,12 +28,10 @@
       </div>
       <div class="head-button">
         <div class="head-button-1">
-          <router-link to="/">Home</router-link>
-          <router-link to="/articledetail" class="sort">Sort</router-link>
-          <router-link to="/articledetail" class="category"
-            >Category</router-link
-          >
-          <router-link to="/articledetail" class="about">About</router-link>
+          <router-link to="/index">Home</router-link>
+          <router-link to="/" class="sort">Sort</router-link>
+          <router-link to="/" class="category">Category</router-link>
+          <router-link to="/" class="about">About</router-link>
         </div>
       </div>
       <Register v-show="this.$store.state.PageStatus"></Register>
