@@ -135,7 +135,7 @@ export default {
   position: relative;
   min-height: 100vh;
   width: auto;
-  background: url("../assets/bgimg/front.jpg");
+  background: url("https://pic.imgdb.cn/item/60bb5b788355f7f7182cc53d.jpg");
   background-size: cover;
 }
 </style>
