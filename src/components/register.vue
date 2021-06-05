@@ -151,7 +151,7 @@ export default {
   width: 20px;
   height: 20px;
   border: 0px solid #acacac;
-  background: url(../assets/cancel.png);
+  background: url("../assets/front-img/cancel.png");
   background-size: cover;
 }
 .r-btn:hover,

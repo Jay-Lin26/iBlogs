@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <el-backtop></el-backtop>
     <router-view id="main" />
   </div>
 </template>
@@ -7,6 +8,12 @@
 <script>
 export default {
   name: "app",
+  methods: {
+
+  },
+  mounted() {
+
+  }
 };
 </script>
 

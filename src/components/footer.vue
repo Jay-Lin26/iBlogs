@@ -26,7 +26,7 @@ export default {
 
 <style>
 #ft {
-  background-color: #1b1b1b;
+  background-color: rgba(0, 0, 0, 0.8);
   font-family: "STXihei";
 }
 .ft-box {

@@ -71,8 +71,8 @@ export default {
 .body-box {
   width: 100%;
   overflow-x: hidden;
-  background-color: #f1f1f1;
-  border-top: 1px solid #f1f1f1;
+  background: url("https://pic.imgdb.cn/item/60bb9bbd8355f7f7189ab84d.jpg");
+  background-size: cover;
 }
 .body-content {
   width: 1000px;

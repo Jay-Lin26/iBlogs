@@ -15,7 +15,7 @@
           <p>“世界很小，”</p>
           <p>“城市很大，”</p>
           <p>“欠缺缘分的人也许....”</p>
-          <p>“终生也不会再见了...”</p>
+          <p>“终生也不会再见了。”</p>
           <p style="margin-left: 200px">————闲人有闲</p>
         </div>
         <div class="nav-bar">
@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style>
+.nav-index:hover, .nav-category:hover, .nav-music:hover, .nav-about:hover{ color: peachpuff; }
 .nav-index, .nav-category, .nav-music, .nav-about {
   width: 70px;
   height: 25px;
@@ -56,8 +57,9 @@ export default {
   font-family: "宋体";
   margin-right: 20px;
   border-radius: 15px;
+  border: 2px solid;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 .nav-bar {
@@ -94,12 +96,12 @@ export default {
   border-radius: 50%;
   width: 32px;
   height: 32px;
-  margin-left: 10px;
+  margin-left: 50px;
 }
 .callme {
   display: flex;
   height: auto;
-  width: 182px;
+  width: 370px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -117,7 +119,7 @@ export default {
   margin: 0 auto;
   margin-bottom: 20px;
   border-radius: 50%;
-  background: url("../assets/bgimg/avatar.jpg");
+  background: url("../assets/front-img/avatar.png");
   background-size: cover;
 }
 .box {
@@ -132,10 +134,12 @@ export default {
   transform: translate(-50%, -50%);
 }
 .main {
+  overflow: hidden;
   position: relative;
   min-height: 100vh;
   width: auto;
-  background: url("https://pic.imgdb.cn/item/60bb5b788355f7f7182cc53d.jpg");
+  color: #111846;
+  background: url("https://pic.imgdb.cn/item/60bb95b68355f7f7188c56f2.jpg");
   background-size: cover;
 }
 </style>

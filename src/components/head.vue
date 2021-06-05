@@ -29,7 +29,7 @@
       <div class="head-button">
         <div class="head-button-1">
           <router-link to="/index">Home</router-link>
-          <router-link to="/" class="sort">Sort</router-link>
+          <router-link to="/articledetail" class="sort">Sort</router-link>
           <router-link to="/" class="category">Category</router-link>
           <router-link to="/" class="about">About</router-link>
         </div>
@@ -86,12 +86,13 @@ export default {
   left: 0px;
   top: 0px;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 #hd,
 .head-box {
   width: 100%;
   height: 100px;
-  background-color: #fefefe;
+  /* background-color: #fefefe; */
 }
 .head-connet {
   width: 1000px;
@@ -128,7 +129,7 @@ export default {
   border: 0px solid #eeeeee;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  background: url(../assets/search.png) #00b5ad;
+  background: url("../assets/front-img/search.png") #00b5ad;
   background-size: cover;
   color: rgba(0, 0, 0, 0);
   outline: 0;
@@ -210,7 +211,7 @@ export default {
 }
 .head-button-1 a {
   text-decoration: none;
-  color: #000000;
+  color: #FFFFFF;
   font-size: 13px;
   margin-left: 10px;
   margin-right: 52px;

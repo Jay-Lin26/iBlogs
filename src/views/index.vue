@@ -135,7 +135,7 @@ export default {
 }
 .show-card:hover {
   transform: translateY(-3%);
-  box-shadow: 3px 3px 3px 3px #f4f4f4;
+  box-shadow: 3px 3px 3px 3px #836972;
 }
 .show-card {
   width: 680px;
@@ -186,5 +186,7 @@ export default {
 .index-all {
   min-height: 100vh;
   overflow: hidden;
+  background: url("https://pic.imgdb.cn/item/60bb99708355f7f71894f8ba.jpg");
+  background-size: cover;
 }
 </style>
