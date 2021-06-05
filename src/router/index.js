@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "../views/index";
 import ArticleDetail from "../views/articleDetail";
-import Register from "../components/register";
+import FrontPage from "../views/frontPage";
 
 Vue.use(VueRouter);
 
@@ -14,27 +14,21 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: "/",
-    name: "index",
-    component: Index,
+    name: "frontPage",
+    component: FrontPage,
     meta: { title: "iBlogs" },
   },
   {
-    path: "/register",
-    name: "register",
-    component: Register,
-    meta: { title: "登录/注册" },
+    path: "/index",
+    name: "index",
+    component: Index,
+    meta: { title: "首页" },
   },
   {
     path: "/articledetail",
     name: "ArticleDetail",
     component: ArticleDetail,
     meta: { title: "文章详情" },
-  },
-  {
-    path: "/main",
-    name: "Main",
-    component: Index,
-    meta: { title: "iBlogs" },
   },
 ];
 

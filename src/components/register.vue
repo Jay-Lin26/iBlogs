@@ -140,6 +140,11 @@ export default {
   margin-top: 24px;
   margin-bottom: 24px;
 }
+.cancel:hover {
+  background-color: #00b5ad;
+  border-radius: 4px;
+  cursor: pointer;
+}
 .cancel {
   margin-right: -310px;
   margin-top: 10px;

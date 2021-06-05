@@ -88,7 +88,6 @@ export default {
   left: 0px;
   top: 0px;
   width: 100%;
-  font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
 #hd,
 .head-box {
@@ -180,7 +179,7 @@ export default {
 .sign {
   margin-left: 50px;
   margin-top: 30px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
 }
 .join {
@@ -191,7 +190,7 @@ export default {
   line-height: 30px;
   margin-left: 50px;
   margin-top: 25px;
-  font-size: 16px;
+  font-size: 15px;
   border: 1px solid #00b5ad;
   color: #00b5ad;
 }
@@ -214,7 +213,7 @@ export default {
 .head-button-1 a {
   text-decoration: none;
   color: #000000;
-  font-size: 12px;
+  font-size: 13px;
   margin-left: 10px;
   margin-right: 52px;
 }

@@ -56,7 +56,7 @@ export default {
         },
         {
           id: 2,
-          name: "《简明Python教程》》",
+          name: "《简明Python教程》",
           desc: "入门Python的绝佳Tutorial，从书的目录便可以了解到作者Swaroop C H清晰的行文思路，以及对Python高超的驾驭能力。",
         },
         {
@@ -73,17 +73,17 @@ export default {
     };
   },
   methods: {
-    // slideshow: function () {
-    //   let banner = document.getElementsByClassName("index-banner");
-    //   let num = 0;
-    //   setInterval(() => {
-    //     num++;
-    //     if (num > 2) {
-    //       num = 0;
-    //     }
-    //     banner[num].className = "active";
-    //   }, 2000);
-    // },
+    slideshow: function () {
+      let banner = document.getElementsByClassName("index-banner");
+      let num = 0;
+      setInterval(() => {
+        num++;
+        if (num > 2) {
+          num = 0;
+        }
+        banner[num].className == "banner-image";
+      }, 2000);
+    },
   },
   mounted() {
     //获取首页数据
@@ -100,7 +100,7 @@ export default {
   width: 450px;
   font-size: 13px;
   color: #909399;
-  margin-top: 70px;
+  margin-top: 50px;
   /* 超过多少行自动隐藏 */
   overflow: hidden;
   display: -webkit-box;
@@ -121,8 +121,8 @@ export default {
 .image,
 .image img {
   margin-left: 12px;
-  height: 160px;
-  width: 160px;
+  height: 120px;
+  width: 120px;
   border-radius: 10px;
   background-size: cover;
 }
@@ -142,7 +142,7 @@ export default {
 }
 .show-card {
   width: 680px;
-  height: 200px;
+  height: 160px;
   background-color: #ffffff;
   transition: all 0.7s;
   margin-bottom: 20px;
