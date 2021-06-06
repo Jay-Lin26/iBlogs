@@ -5,13 +5,14 @@
         <div class="ft-image"><div></div></div>
         <div class="ft-image"><div></div></div>
         <div class="ft-des">
-          <p>User Story Choice</p>
-          <p>is more important than effort</p>
+          <p>用户故事</p>
+          <p>&</p>
+          <p>选择比努力更重要</p>
         </div>
         <div class="ft-des">
-          <p>About Us</p>
-          <p>Privacy Policy</p>
-          <p>Common Problems</p>
+          <p>关于我们</p>
+          <p>隐私协议</p>
+          <p>常见问题</p>
         </div>
       </div>
       <div class="ft-copy">Copyright @ 2020-2021 Linse Designed by Linse</div>

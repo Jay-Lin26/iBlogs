@@ -123,8 +123,8 @@ export default {
   background-size: cover;
 }
 .box {
-  width: 1200px;
-  height: 600px;
+  width: 60%;
+  height: 85%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -137,7 +137,7 @@ export default {
   overflow: hidden;
   position: relative;
   min-height: 100vh;
-  width: auto;
+  width: 100%;
   color: #111846;
   background: url("https://pic.imgdb.cn/item/60bb95b68355f7f7188c56f2.jpg");
   background-size: cover;

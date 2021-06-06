@@ -3,9 +3,16 @@
     <div class="head-box">
       <div class="head-connet">
         <div class="head-logo">iBlogs</div>
+        <div class="head-button">
+          <div class="head-button-1">
+            <router-link to="/index">Home</router-link>
+            <router-link to="/articledetail" class="sort">Category</router-link>
+            <router-link to="/" class="about">About</router-link>
+          </div>
+        </div>
         <div>
           <span>
-            <input class="input" placeholder="Enter what you want to search" />
+            <input class="input" placeholder="Enter to Search" />
             <button class="btn" @click="search()">Search</button>
           </span>
         </div>
@@ -24,14 +31,6 @@
             Sign In
           </div>
           <div class="join" @click="pageControl()">Join now</div>
-        </div>
-      </div>
-      <div class="head-button">
-        <div class="head-button-1">
-          <router-link to="/index">Home</router-link>
-          <router-link to="/articledetail" class="sort">Sort</router-link>
-          <router-link to="/" class="category">Category</router-link>
-          <router-link to="/" class="about">About</router-link>
         </div>
       </div>
       <Register v-show="this.$store.state.PageStatus"></Register>
@@ -91,7 +90,7 @@ export default {
 #hd,
 .head-box {
   width: 100%;
-  height: 100px;
+  height: 80px;
   /* background-color: #fefefe; */
 }
 .head-connet {
@@ -101,7 +100,7 @@ export default {
   display: flex;
 }
 .head-logo {
-  width: 90px;
+  width: 100px;
   font-size: 35px;
   font-weight: 500;
   color: #00b5ad;
@@ -109,15 +108,15 @@ export default {
   margin-top: 15px;
 }
 .input {
-  width: 360px;
+  width: 240px;
   height: 35px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border: 1px solid #eeeeee;
   padding-left: 20px;
   outline: 0;
-  margin-left: 200px;
   margin-top: 20px;
+  opacity: 0.6;
 }
 .btn:hover {
   background-color: #009a94;
@@ -133,6 +132,7 @@ export default {
   background-size: cover;
   color: rgba(0, 0, 0, 0);
   outline: 0;
+  opacity: 0.6;
 }
 .user {
   margin-top: 30px;
@@ -201,20 +201,19 @@ export default {
   text-decoration: underline;
 }
 .head-button {
-  margin: 0 auto;
+  margin-left: 30px;
 }
 .head-button-1 {
   height: 20px;
-  width: 1000px;
+  width: 300px;
   margin: 0 auto;
-  line-height: 5px;
+  line-height: 78px;
 }
 .head-button-1 a {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 13px;
-  margin-left: 10px;
-  margin-right: 52px;
+  margin-left: 40px;
 }
 .head-button-1 a:hover {
   color: #00b5ad;

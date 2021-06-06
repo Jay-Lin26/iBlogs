@@ -19,12 +19,15 @@ export default {
 
 <style>
 html,
-body {
+body,
+#app {
   width: 100%;
   height: 100%;
   margin: 0 !important;
 }
 #main {
+  width: 100%;
+  height: 100%;
   background-color: #f7f7f7;
   font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif !important;
   min-height: 100vh;
