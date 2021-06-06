@@ -8,7 +8,7 @@
               class="show-card"
               v-for="item in leftList"
               v-bind:key="item.id"
-              @click="showdetail()"
+              @click="showdetail( item.id )"
             >
               <div class="card-in">
                 <div class="detail">
@@ -47,8 +47,8 @@ export default {
     };
   },
   methods: {
-    showdetail: function () {
-      this.$router.push('/articledetail')
+    showdetail: function (show_id) {
+      this.$router.push('/articledetail/' + show_id)
     },
   },
   mounted() {

@@ -25,7 +25,7 @@ const routes = [
     meta: { title: "首页" },
   },
   {
-    path: "/articledetail",
+    path: "/articledetail/:id",
     name: "ArticleDetail",
     component: ArticleDetail,
     meta: { title: "文章详情" },

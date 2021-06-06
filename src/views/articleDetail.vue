@@ -3,33 +3,11 @@
     <thehead></thehead>
     <div class="body-box">
       <div class="body-content">
-        <div class="userinfo">
-          <div class="u-wel">Welcome</div>
-          <div class="u-name" style="font-size: 16px; color: #00b5ad">
-            {{ this.$store.state.UserName }}
-          </div>
-          <div class="u-time">Member since 9/12/2020</div>
-          <div class="u-button" style="color: #00b5ad">
-            <a href="#">Edit Profile</a>
-          </div>
-          <div class="u-hav">
-            <div class="u-space"></div>
-            <div class="u-hav-1">
-              <router-link to="/">Home</router-link>
-            </div>
-            <div class="u-hav-2"><router-link to="/index">Tag</router-link></div>
-            <div class="u-hav-3"><router-link to="/index">Sort</router-link></div>
-          </div>
-        </div>
         <div class="usershow">
           <div class="show-title">
             <h3 style="text-align: center">{{ show_title }}</h3>
-            <h4 style="text-align: center">
-              发表于 2021-04-30 | 更新于 2021-04-30 | 阅读次数： 6695
-            </h4>
-            <div class="content" v-html="show_content">
-              {{ show_content }}
-            </div>
+            <h4 style="text-align: center">{{ show_from }}</h4>
+            <div class="content" v-html="show_content">{{ show_content }}</div>
           </div>
         </div>
       </div>
@@ -42,11 +20,13 @@ import { blog_detail } from "../http/api.js";
 import Thehead from "../components/head.vue";
 import Thefoot from "../components/footer.vue";
 export default {
-  name: "home",
+  name: "articledetail",
   components: { Thehead, Thefoot },
   data: function () {
     return {
+      show_id: this.$route.params.id,
       show_title: "",
+      show_from: "",
       show_content: "",
     };
   },
@@ -60,8 +40,14 @@ export default {
   },
   mounted() {
     //获取博客内容
-    blog_detail().then((result) => {
-      (this.show_title = result.title), (this.show_content = result.content);
+    blog_detail( this.show_id ).then((result) => {
+      if (result.code == '201') {
+        this.show_title = result.message;
+      }else {
+        this.show_title = result.title;
+        this.show_from = '发表于 2021-04-30 | 阅读次数： 20';
+        this.show_content = result.content;
+      };
     });
   },
 };
@@ -81,47 +67,8 @@ export default {
   margin: 0 auto;
   margin-top: 25px;
 }
-.userinfo {
-  font-size: 14px;
-  width: 20%;
-  height: 220px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  float: left;
-}
-.u-button a,
-.u-hav a {
-  font-size: 14px;
-  text-decoration: none;
-  color: #00b5ad;
-}
-.u-wel,
-.u-name,
-.u-time,
-.u-button {
-  font-size: px;
-  color: #909399;
-  text-align: center;
-  padding: 10px;
-}
-.u-hav {
-  background-color: #ffffff;
-  border-radius: 10px;
-  height: 200px;
-}
-.u-hav-1,
-.u-hav-2,
-.u-hav-3 {
-  text-align: center;
-  margin: 20px 0 30px 0;
-}
-.u-space {
-  width: 100%;
-  height: 20px;
-  background-color: #f1f1f1;
-}
 .usershow {
-  width: 78%;
+  width: 100%;
   height: 100%;
   float: right;
   background-color: #ffffff;
@@ -143,6 +90,9 @@ export default {
   padding-left: 50px;
   padding-right: 30px;
   min-height: 100vh;
+  font-size: 16px !important;
+  font-family: "微软雅黑";
+  letter-spacing: 2px;
 }
 .body-content {
   margin-top: 120px;

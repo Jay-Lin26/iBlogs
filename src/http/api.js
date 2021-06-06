@@ -34,9 +34,10 @@ export const index = function () {
 };
 
 //博客详情
-export const blog_detail = function () {
+export const blog_detail = function ( data ) {
   return service({
     url: "/api/v1.0/article/detail",
     method: "get",
+    params: { article_id: data }
   });
 };

@@ -6,13 +6,13 @@
         <div class="head-button">
           <div class="head-button-1">
             <router-link to="/index">Home</router-link>
-            <router-link to="/articledetail" class="sort">Category</router-link>
+            <router-link to="/articledetail/1" class="sort">Category</router-link>
             <router-link to="/" class="about">About</router-link>
           </div>
         </div>
         <div>
           <span>
-            <input class="input" placeholder="Enter to Search" />
+            <input class="input" placeholder="输入您想查看的内容。。。" />
             <button class="btn" @click="search()">Search</button>
           </span>
         </div>
@@ -138,7 +138,7 @@ export default {
   margin-top: 30px;
   font-size: 16px;
   color: #00b5ad;
-  margin-left: 150px;
+  margin-left: 110px;
   cursor: pointer;
   position: relative;
 }
