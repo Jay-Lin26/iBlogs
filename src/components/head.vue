@@ -137,17 +137,15 @@ export default {
 .user {
   margin-top: 30px;
   font-size: 16px;
-  color: #00b5ad;
+  color: #f1f1f1;
   margin-left: 110px;
   cursor: pointer;
   position: relative;
 }
 .user:hover .menu {
   display: block;
-  transform: matrix3d();
 }
 .menu {
-  transition: all 1s;
   display: none;
   position: absolute;
   top: 30px;
@@ -164,8 +162,8 @@ export default {
   list-style: none;
 }
 .menu-nav li:hover {
-  background-color: #009a94;
-  color: #f1f1f1;
+  background-color: #d2f3f1;
+  color: #000;
 }
 .menu-nav li {
   line-height: 30px;

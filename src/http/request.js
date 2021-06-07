@@ -3,7 +3,7 @@ import axios from "axios";
 const service = axios.create({
   baseURL: "http://139.224.63.20:5000/",
   headers: { Version: "1.0.1" },
-  timeout: 3000,
+  timeout: 5000,
 });
 service.interceptors.request.use(
   (config) => {

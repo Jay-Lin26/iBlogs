@@ -19,10 +19,10 @@
           <p style="margin-left: 100px">————闲人有闲</p>
         </div>
         <div class="nav-bar">
-          <div class="nav-index" @click="indexclick()">首页</div>
-          <div class="nav-category">分类</div>
-          <div class="nav-music">音乐盒</div>
-          <div class="nav-about">关于我</div>
+          <div class="nav-index" @click="indexclick(1)">首页</div>
+          <div class="nav-category" @click="indexclick(2)">分类</div>
+          <div class="nav-music" @click="indexclick(3)">音乐盒</div>
+          <div class="nav-about" @click="indexclick(4)">关于我</div>
         </div>
       </div>
     </div>
@@ -39,9 +39,22 @@ export default {
     }
   },
   methods: {
-    indexclick: function () {
-      this.$router.push('/index')
-    }
+    indexclick: function ( page ) {
+      switch (page) {
+        case 1:
+          this.$router.push('/index')
+          break;
+        case 2:
+          this.$router.push('/articledetail/1')
+          break;
+        case 3:
+          this.$router.push('/')
+          break;
+        case 4:
+          this.$router.push('/')
+          break;
+      }
+    },
   }
 };
 </script>
@@ -54,10 +67,10 @@ export default {
   line-height: 25px;
   font-size: 16px;
   font-weight: 500;
-  font-family: "宋体";
+  font-family: "楷体";
   margin-right: 20px;
   border-radius: 15px;
-  border: 2px solid;
+  border: 1px solid;
   color: #ffffff;
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -123,8 +136,8 @@ export default {
   background-size: cover;
 }
 .box {
-  width: 60%;
-  height: 85%;
+  width: 600px;
+  height: 600px;
   justify-content: center;
   align-items: center;
   text-align: center;
