@@ -7,13 +7,7 @@
 
 <script>
 export default {
-  name: "app",
-  methods: {
-
-  },
-  mounted() {
-
-  }
+  name: "app"
 };
 </script>
 

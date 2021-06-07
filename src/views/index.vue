@@ -39,7 +39,7 @@ import Thehead from "../components/head.vue";
 import Thefoot from "../components/footer.vue";
 import { index } from "../http/api.js";
 export default {
-  name: "myhome",
+  name: "index",
   components: { Thehead, Thefoot },
   data: function () {
     return {

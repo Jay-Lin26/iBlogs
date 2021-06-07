@@ -14,4 +14,7 @@ new Vue({
   router,
   store,
   render: (h) => h(App),
+  mounted () {
+    window.Vue = this;
+  }
 }).$mount("#app");
