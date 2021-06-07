@@ -93,8 +93,9 @@ export default {
   font-size: 16px !important;
   font-family: "微软雅黑";
   letter-spacing: 2px;
+  line-height: 30px;
 }
 .body-content {
-  margin-top: 120px;
+  margin-top: 105px;
 }
 </style>
