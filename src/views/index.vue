@@ -16,9 +16,9 @@
                   <div class="description">{{ item.desc }}</div>
                   <div class="writer">
                     <div class="w-avatar"></div>
-                    <div class="w-name">linse-jay</div>
-                    <div class="w-time">发布时间：2021-6-4</div>
-                    <div class="w-look">浏览数：7</div>
+                    <div class="w-name">{{ item.writer }}</div>
+                    <div class="w-time">发布时间：{{ item.release_time }}</div>
+                    <div class="w-look">浏览数：{{ item.view }}</div>
                     <div class="w-tag">博客系统开发</div>
                   </div>
                 </div>

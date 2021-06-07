@@ -116,7 +116,6 @@ export default {
   padding-left: 20px;
   outline: 0;
   margin-top: 20px;
-  opacity: 0.6;
 }
 .btn:hover {
   background-color: #009a94;
@@ -132,7 +131,6 @@ export default {
   background-size: cover;
   color: rgba(0, 0, 0, 0);
   outline: 0;
-  opacity: 0.6;
 }
 .user {
   margin-top: 30px;
