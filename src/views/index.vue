@@ -68,6 +68,7 @@ export default {
 .writer {
   height: 20%;
   bottom: 0px;
+  font-size: 12px;
   align-items: center;
   position: absolute;
   display: flex;

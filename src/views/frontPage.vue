@@ -16,7 +16,7 @@
           <p>“城市很大，”</p>
           <p>“欠缺缘分的人也许....”</p>
           <p>“终生也不会再见了。”</p>
-          <p style="margin-left: 200px">————闲人有闲</p>
+          <p style="margin-left: 100px">————闲人有闲</p>
         </div>
         <div class="nav-bar">
           <div class="nav-index" @click="indexclick()">首页</div>
