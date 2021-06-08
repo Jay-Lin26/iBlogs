@@ -18,6 +18,7 @@
         </div>
         <div class="user" v-if="whetheLogin">
           {{ this.$store.state.UserName }}
+          <i class="el-icon-arrow-down"></i>
           <div class="menu">
             <ul class="menu-nav">
               <li>个人中心</li>
@@ -141,12 +142,14 @@ export default {
   position: relative;
 }
 .user:hover .menu {
+  color: #00b5ad;
   display: block;
 }
 .menu {
   display: none;
   position: absolute;
   top: 30px;
+  left: -10px;
   background-color: #ffffff;
   border: 1px solid #f5f5f9;
   border-radius: 5px;
