@@ -2,7 +2,23 @@
   <div id="hd">
     <div class="head-box">
       <div class="head-connet">
-        <div class="head-logo">iBlogs</div>
+        <div class="head-logo">
+          <svg width="150" height="60" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <title>background</title>
+              <rect fill="rgba(0,0,0,0)" id="canvas_background" height="62" width="157" y="-1" x="-1"/>
+              <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+              <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+              </g>
+            </g>
+            <g>
+              <title>Layer 1</title>
+              <text font-style="italic" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, serif" font-size="162" id="svg_1" y="235.5" x="60.523438" stroke-width="0" stroke="#000" fill="#afb4db">iBlogs</text>
+              <text stroke="#000" transform="matrix(1,0,0,1.0285714864730835,0,-0.9174125734716654) " xml:space="preserve" text-anchor="start" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, serif" font-size="26" id="svg_2" y="24.109375" x="61" stroke-width="0" fill="#afb4db"/>
+              <text font-style="italic" font-weight="bold" stroke="#000" transform="matrix(0.9181492679094418,0,0,1.063895586343823,0.14804763657391762,20.564003545175524) " xml:space="preserve" text-anchor="start" font-family="Georgia, Times, 'Times New Roman', serif" font-size="43" id="svg_3" y="23.995114" x="14.396078" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#afb4db">iBlogs</text>
+            </g>
+          </svg>
+        </div>
         <div class="head-button">
           <div class="head-button-1">
             <router-link to="/index">首页</router-link>
@@ -95,13 +111,8 @@ export default {
   margin: 0 auto;
   display: flex;
 }
-.head-logo {
-  width: 100px;
-  font-size: 35px;
-  font-weight: 500;
-  color: #afb4db;
-  margin-left: 10px;
-  margin-top: 15px;
+.head-logo svg{
+  margin-top: 7px;
 }
 .input {
   position: absolute;
