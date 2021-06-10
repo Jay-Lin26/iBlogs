@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style>
-.nav-index:hover, .nav-category:hover, .nav-music:hover, .nav-about:hover{ color: peachpuff; }
+.nav-index:hover, .nav-category:hover, .nav-music:hover, .nav-about:hover{ color: #afb4db; }
 .nav-index, .nav-category, .nav-music, .nav-about {
   width: 70px;
   height: 25px;

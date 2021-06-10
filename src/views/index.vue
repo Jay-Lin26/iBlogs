@@ -141,8 +141,8 @@ export default {
   margin-top: 80px;
 }
 .index-all {
-  min-height: 100vh;
   width: 100%;
+  overflow: hidden;
   background: url("https://pic.imgdb.cn/item/60bb99708355f7f71894f8ba.jpg");
   background-size: cover;
 }

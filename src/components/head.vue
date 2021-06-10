@@ -5,16 +5,14 @@
         <div class="head-logo">iBlogs</div>
         <div class="head-button">
           <div class="head-button-1">
-            <router-link to="/index">Home</router-link>
-            <router-link to="/articledetail/1" class="sort">Category</router-link>
-            <router-link to="/" class="about">About</router-link>
+            <router-link to="/index">首页</router-link>
+            <router-link to="/articledetail/1" class="sort">文章</router-link>
+            <router-link to="/" class="about">关于我</router-link>
           </div>
         </div>
-        <div>
-          <span>
-            <input class="input" placeholder="输入您想查看的内容。。。" />
-            <button class="btn" @click="search()">Search</button>
-          </span>
+        <div class="search">
+          <input class="input" placeholder="输入您想查看的内容。。。" />
+          <button class="btn" @click="search()"></button>
         </div>
         <div class="user" v-if="whetheLogin">
           {{ this.$store.state.UserName }}
@@ -28,10 +26,8 @@
           </div>
         </div>
         <div class="to-login" v-else>
-          <div class="sign" style="color: #00b5ad" @click="pageControl()">
-            Sign In
-          </div>
-          <div class="join" @click="pageControl()">Join now</div>
+          <div class="sign" @click="pageControl()">登录</div>
+          <div class="join" @click="pageControl()">注册</div>
         </div>
       </div>
       <Register v-show="this.$store.state.PageStatus"></Register>
@@ -86,13 +82,12 @@ export default {
   left: 0px;
   top: 0px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #hd,
 .head-box {
   width: 100%;
   height: 80px;
-  /* background-color: #fefefe; */
 }
 .head-connet {
   width: 1000px;
@@ -104,11 +99,12 @@ export default {
   width: 100px;
   font-size: 35px;
   font-weight: 500;
-  color: #00b5ad;
+  color: #afb4db;
   margin-left: 10px;
   margin-top: 15px;
 }
 .input {
+  position: absolute;
   width: 240px;
   height: 35px;
   border-top-left-radius: 4px;
@@ -116,33 +112,40 @@ export default {
   border: 1px solid #eeeeee;
   padding-left: 20px;
   outline: 0;
-  margin-top: 20px;
+  top: 20px;
 }
 .btn:hover {
-  background-color: #009a94;
+  background-color: #8689a7;
 }
 .btn {
+  position: absolute;
   cursor: pointer;
   width: 40px;
   height: 39px;
-  border: 0px solid #eeeeee;
+  top: 20px;
+  right: 0px;
+  border: 0 solid #afb4db;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  background: url("../assets/front-img/search.png") #00b5ad;
+  background: url("../assets/front-img/search.png") #afb4db;
   background-size: cover;
   color: rgba(0, 0, 0, 0);
   outline: 0;
 }
+.search {
+  position: relative;
+  width: 300px;
+}
 .user {
   margin-top: 30px;
   font-size: 16px;
-  color: #f1f1f1;
+  color: #afb4db;
   margin-left: 110px;
   cursor: pointer;
   position: relative;
 }
 .user:hover .menu {
-  color: #00b5ad;
+  color: #8689a7;
   display: block;
 }
 .menu {
@@ -163,7 +166,7 @@ export default {
   list-style: none;
 }
 .menu-nav li:hover {
-  background-color: #d2f3f1;
+  background-color: #8689a7;
   color: #000;
 }
 .menu-nav li {
@@ -173,6 +176,7 @@ export default {
 }
 .to-login {
   display: flex;
+  color: #afb4db;
 }
 .sign {
   margin-left: 50px;
@@ -189,11 +193,10 @@ export default {
   margin-left: 50px;
   margin-top: 25px;
   font-size: 15px;
-  border: 1px solid #00b5ad;
-  color: #00b5ad;
+  border: 1px solid #afb4db;
 }
 .join:hover {
-  background-color: #00b5ad;
+  background-color: #8689a7;
   color: #f1f1f1;
 }
 .sign:hover {
@@ -215,6 +218,6 @@ export default {
   margin-left: 40px;
 }
 .head-button-1 a:hover {
-  color: #00b5ad;
+  color: #afb4db;
 }
 </style>
