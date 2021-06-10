@@ -117,7 +117,7 @@ export default {
 }
 .show-card:hover {
   transform: translateY(-3%);
-  box-shadow: 3px 3px 3px 3px #836972;
+  box-shadow: 3px 3px 3px 3px #afb4db;
 }
 .show-card {
   width: 1000px;
