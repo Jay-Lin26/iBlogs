@@ -143,6 +143,7 @@ export default {
 .index-all {
   width: 100%;
   overflow: hidden;
+  min-height: 100vh;
   background: url("https://pic.imgdb.cn/item/60bb99708355f7f71894f8ba.jpg");
   background-size: cover;
 }

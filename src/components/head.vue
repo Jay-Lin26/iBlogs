@@ -213,9 +213,6 @@ export default {
 .sign:hover {
   text-decoration: underline;
 }
-.head-button {
-  margin-left: 30px;
-}
 .head-button-1 {
   height: 20px;
   width: 300px;
