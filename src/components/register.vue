@@ -32,7 +32,7 @@
           </span>
           <button class="r-btn" @click="register()">注册</button>
           <div style="font-size: 14px">
-            <label style="margin-right: 15px">没有账号？</label>
+            <label style="margin-right: 15px">已有账号？</label>
             <label
               style="color: #afb4db; cursor: pointer"
               @click="joinPage = !joinPage"
@@ -56,7 +56,7 @@
             </div>
           </div>
         </div>
-        <div style="font-size: 12px; margin-top: 24px; color: #acacac">
+        <div style="font-size: 12px; margin-top: 24px; color: #acacac; font-style:oblique">
           <div style="margin-bottom: 6px">
             加入iBlogs, 即代表您同意我们的服务条款和
           </div>

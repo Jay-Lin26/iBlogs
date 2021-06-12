@@ -5,10 +5,10 @@
         <div class="avatar"></div>
         <div class="name">{{ myName }}</div>
         <div class="callme">
-          <div class="icon-w"></div>
-          <div class="icon-q"></div>
-          <div class="icon-g"></div>
-          <div class="icon-e"></div>
+          <div class="icon-w"><div class="weixin"></div></div>
+          <div class="icon-q" @click="jumpClick(1)"></div>
+          <div class="icon-g" @click="jumpClick(2)"></div>
+          <div class="icon-e"><div class="email">z64666760@163.com</div></div>
         </div>
         <div class="inturduce">{{ inturduce }}</div>
         <div class="info">
@@ -55,6 +55,17 @@ export default {
           break;
       }
     },
+    jumpClick: function ( pageNum ) {
+      switch ( pageNum ) {
+        case 1:
+          window.open("tencent://message/?uin=1922206771&Site=iBlogs&Menu=yes");
+          break;
+        case 2:
+          window.open("https://github.com/Jay-Lin26");
+          break;
+      }
+
+    },
   }
 };
 </script>
@@ -62,10 +73,10 @@ export default {
 <style>
 .nav-index:hover, .nav-category:hover, .nav-music:hover, .nav-about:hover{ color: #afb4db; transform: translateY(-3%); }
 .nav-index, .nav-category, .nav-music, .nav-about {
-  width: 70px;
-  height: 25px;
-  line-height: 25px;
-  font-size: 16px;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
   font-weight: 500;
   font-family: "楷体";
   margin-right: 20px;
@@ -77,7 +88,7 @@ export default {
   transition: all 0.5s;
 }
 .nav-bar {
-  width: 360px;
+  width: 500px;
   height: auto;
   margin: 0 auto;
   margin-top: 60px;
@@ -99,11 +110,37 @@ export default {
   font-weight: 350;
   font-family: "楷体";
 }
+.weixin {
+  position: absolute;
+  display: none;
+  width: 110px;
+  height: 110px;
+  top: 38px;
+  left: -38px;
+  border-radius: 8px;
+  background: url("https://pic.imgdb.cn/item/60abc01a2a0bae8e0ce9b225.png");
+  background-size: cover;
+}
+.email {
+  position: absolute;
+  display: none;
+  width: 140px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  top: 38px;
+  left: -38px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.icon-e:hover .email { display: block; }
+.icon-w:hover .weixin { display: block; }
 .icon-e {background: url("../assets/front-icon/email.png") #ffffff;}
 .icon-q {background: url("../assets/front-icon/QQ.png") #ffffff;}
 .icon-g {background: url("../assets/front-icon/github.png") #ffffff;}
 .icon-w {background: url("../assets/front-icon/weixin.png") #ffffff;}
 .icon-w, .icon-g, .icon-q, .icon-e{
+  position: relative;
   background-size: 18px 18px;
   background-repeat: no-repeat;
   background-position: center;
@@ -118,6 +155,7 @@ export default {
   width: 370px;
   margin: 0 auto;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .name {
   color: white;
@@ -152,7 +190,6 @@ export default {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  color: #111846;
   background: url("https://pic.imgdb.cn/item/60bb95b68355f7f7188c56f2.jpg");
   background-size: cover;
 }
