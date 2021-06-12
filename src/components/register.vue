@@ -3,12 +3,12 @@
     <div class="alert-body">
       <div class="login-box">
         <button class="cancel" @click="closePage()"></button>
-        <div class="alert-title" v-if="joinPage">Join Now</div>
-        <div class="alert-title" v-else>Sign in</div>
+        <div class="alert-title" v-if="joinPage">注册</div>
+        <div class="alert-title" v-else>登录</div>
         <div>
           <input
             class="alert-email"
-            placeholder="Email"
+            placeholder="邮箱"
             v-model="email"
             @keyup.enter="submit"
           />
@@ -17,7 +17,7 @@
           <input
             class="alert-pwd"
             type="password"
-            placeholder="Password"
+            placeholder="密码"
             v-model="password"
           />
         </div>
@@ -25,43 +25,43 @@
           <span>
             <input
               class="alert-code"
-              placeholder="Verification Code"
+              placeholder="验证码"
               v-model="code"
             />
-            <button class="c-btn" @click="get_code()">Get Code</button>
+            <button class="c-btn" @click="get_code()">获取验证码</button>
           </span>
-          <button class="r-btn" @click="register()">Join Now</button>
+          <button class="r-btn" @click="register()">注册</button>
           <div style="font-size: 14px">
-            <label style="margin-right: 15px">Already a member？</label>
+            <label style="margin-right: 15px">没有账号？</label>
             <label
-              style="color: #00b5ad; cursor: pointer"
+              style="color: #afb4db; cursor: pointer"
               @click="joinPage = !joinPage"
-              >Sign in</label
+              >登录</label
             >
           </div>
         </div>
         <div v-else>
-          <button class="l-btn" @click="login()">Sign in</button>
+          <button class="l-btn" @click="login()">登录</button>
           <div style="font-size: 14px">
-            <div style="color: #00b5ad; cursor: pointer; margin-bottom: 24px">
-              Forget Password？
+            <div style="color: #afb4db; cursor: pointer; margin-bottom: 24px">
+              忘记密码？
             </div>
             <div>
-              <label style="margin-right: 15px">Not a member？</label>
+              <label style="margin-right: 15px">没有账号？</label>
               <label
-                style="color: #00b5ad; cursor: pointer"
+                style="color: #afb4db; cursor: pointer"
                 @click="joinPage = !joinPage"
-                >Join Now</label
+                >注册账号</label
               >
             </div>
           </div>
         </div>
         <div style="font-size: 12px; margin-top: 24px; color: #acacac">
           <div style="margin-bottom: 6px">
-            By joining, you agree to the Terms & Conditions and
+            加入iBlogs, 即代表您同意我们的服务条款和
           </div>
-          <div style="margin-bottom: 6px">Privacy Policy</div>
-          <div style="margin-bottom: 24px">*Bonus terms apply</div>
+          <div style="margin-bottom: 6px">隐私协议</div>
+          <div style="margin-bottom: 24px">以及任何奖励相关的条件</div>
         </div>
       </div>
     </div>
@@ -141,13 +141,13 @@ export default {
   margin-bottom: 24px;
 }
 .cancel:hover {
-  background-color: #00b5ad;
+  background-color: #8689a7;
   border-radius: 4px;
   cursor: pointer;
 }
 .cancel {
-  margin-right: -310px;
-  margin-top: 10px;
+  position: absolute;
+  right: 24px;
   width: 20px;
   height: 20px;
   border: 0px solid #acacac;
@@ -157,7 +157,7 @@ export default {
 .r-btn:hover,
 .l-btn:hover,
 .c-btn:hover {
-  background-color: #009a94;
+  background-color: #8689a7;
 }
 .c-btn {
   cursor: pointer;
@@ -166,7 +166,7 @@ export default {
   border: 1px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  background-color: #00b5ad;
+  background-color: #afb4db;
   color: #f1f1f1;
   outline: 0;
 }
@@ -177,9 +177,10 @@ export default {
   height: 40px;
   border-radius: 4px;
   border: 1px;
-  background-color: #00b5ad;
+  background-color: #afb4db;
   color: #f1f1f1;
   margin-bottom: 24px;
+  padding: 0 !important;
   outline: 0;
 }
 .alert-code {
@@ -189,7 +190,7 @@ export default {
   border-bottom-left-radius: 4px;
   border: 1px solid #eeeeee;
   margin-bottom: 24px;
-  padding-left: 20px;
+  padding: 2px 0 0 20px;
   outline: 0;
 }
 .alert-code::-webkit-input-placeholder,
@@ -208,6 +209,7 @@ export default {
   outline: 0;
 }
 .alert-body {
+  position: relative;
   text-align: center;
   background-color: #ffffff;
   width: 360px;

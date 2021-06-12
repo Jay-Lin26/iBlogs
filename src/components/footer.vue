@@ -31,7 +31,7 @@ export default {
   font-family: "STXihei";
 }
 .ft-box {
-  font-size: 14px;
+  font-size: 10px;
   width: 1000px;
   /* height: 150px; */
   margin: 0 auto;

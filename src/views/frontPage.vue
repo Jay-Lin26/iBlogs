@@ -39,8 +39,8 @@ export default {
     }
   },
   methods: {
-    indexclick: function ( page ) {
-      switch (page) {
+    indexclick: function ( pageNum ) {
+      switch (pageNum) {
         case 1:
           this.$router.push('/index')
           break;
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style>
-.nav-index:hover, .nav-category:hover, .nav-music:hover, .nav-about:hover{ color: #afb4db; }
+.nav-index:hover, .nav-category:hover, .nav-music:hover, .nav-about:hover{ color: #afb4db; transform: translateY(-3%); }
 .nav-index, .nav-category, .nav-music, .nav-about {
   width: 70px;
   height: 25px;
@@ -74,6 +74,7 @@ export default {
   color: #ffffff;
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: all 0.5s;
 }
 .nav-bar {
   width: 360px;

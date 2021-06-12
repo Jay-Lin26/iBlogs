@@ -124,7 +124,7 @@ export default {
   height: 200px;
   background-color: #fff;
   opacity: 0.8;
-  transition: all 0.7s;
+  transition: all 0.5s;
   margin-bottom: 20px;
   border-radius: 10px;
   position: relative;
