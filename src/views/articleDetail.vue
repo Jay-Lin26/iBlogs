@@ -12,16 +12,14 @@
         </div>
       </div>
     </div>
-    <Thefoot></Thefoot>
   </div>
 </template>
 <script>
 import { blog_detail } from "../http/api.js";
 import Thehead from "../components/head.vue";
-import Thefoot from "../components/footer.vue";
 export default {
   name: "articledetail",
-  components: { Thehead, Thefoot },
+  components: { Thehead },
   data: function () {
     return {
       show_id: this.$route.params.id,

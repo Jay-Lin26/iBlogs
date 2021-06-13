@@ -15,6 +15,10 @@
           <p>常见问题</p>
         </div>
       </div>
+      <div class="beian">
+        <div class="ba-icon"></div>
+        <a href="https://beian.miit.gov.cn/" target="_blank">您的备案号</a>
+      </div>
       <div class="ft-copy">Copyright @ 2020-2021 Linse Designed by Linse</div>
     </div>
   </div>
@@ -27,13 +31,13 @@ export default {
 
 <style>
 #ft {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid #eee;
   font-family: "STXihei";
 }
 .ft-box {
   font-size: 10px;
   width: 1000px;
-  /* height: 150px; */
   margin: 0 auto;
 }
 .ft-main {
@@ -62,8 +66,29 @@ export default {
 }
 .ft-copy {
   color: #f1f1f1;
-  height: 50px;
-  line-height: 50px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
+}
+.beian {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+.ba-icon {
+  position: absolute;
+  left: 400px;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/front-icon/备案.png");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.beian a {
+  text-decoration: none;
+  color: #d5a13d;
 }
 </style>

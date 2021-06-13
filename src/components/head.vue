@@ -20,11 +20,9 @@
           </svg>
         </div>
         <div class="head-button">
-          <div class="head-button-1">
-            <router-link to="/index">首页</router-link>
-            <router-link to="/articledetail/1" class="sort">文章</router-link>
-            <router-link to="/" class="about">关于我</router-link>
-          </div>
+          <router-link to="/index">首页</router-link>
+          <router-link to="/articledetail/1" class="sort">文章</router-link>
+          <router-link to="/" class="about">关于我</router-link>
         </div>
         <div class="search">
           <input class="input" placeholder="输入您想查看的内容。。。" />
@@ -112,7 +110,7 @@ export default {
   display: flex;
 }
 .head-logo svg{
-  margin-top: 3px;
+  margin-top: 6px;
 }
 .input {
   position: absolute;
@@ -213,19 +211,18 @@ export default {
 .sign:hover {
   text-decoration: underline;
 }
-.head-button-1 {
-  height: 20px;
+.head-button {
   width: 300px;
-  margin: 0 auto;
-  line-height: 78px;
+  margin: 0;
+  line-height: 80px;
 }
-.head-button-1 a {
+.head-button a {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 13px;
   margin-left: 40px;
 }
-.head-button-1 a:hover {
+.head-button a:hover {
   color: #afb4db;
 }
 </style>

@@ -2,12 +2,15 @@
   <div id="app">
     <el-backtop></el-backtop>
     <router-view id="main" />
+    <Thefoot></Thefoot>
   </div>
 </template>
 
 <script>
+import Thefoot from "./components/footer.vue";
 export default {
-  name: "app"
+  name: "app",
+  components: { Thefoot }
 };
 </script>
 
@@ -16,7 +19,6 @@ html,
 body,
 #app {
   width: 100%;
-  height: 100%;
   margin: 0 !important;
 }
 #main {

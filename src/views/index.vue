@@ -30,17 +30,15 @@
         </div>
       </div>
     </div>
-    <Thefoot></Thefoot>
   </div>
 </template>
 
 <script>
 import Thehead from "../components/head.vue";
-import Thefoot from "../components/footer.vue";
 import { index } from "../http/api.js";
 export default {
   name: "index",
-  components: { Thehead, Thefoot },
+  components: { Thehead },
   data: function () {
     return {
       leftList: {},
@@ -135,15 +133,14 @@ export default {
   height: 100%;
 }
 .index-body {
-  padding: 20px 0 20px 0;
+  padding: 20px 0 0 0;
   width: 1000px;
+  min-height: 100vh;
   margin: 0 auto;
   margin-top: 80px;
 }
 .index-all {
-  width: 100%;
   overflow: hidden;
-  min-height: 100vh;
   background: url("https://pic.imgdb.cn/item/60bb99708355f7f71894f8ba.jpg");
   background-size: cover;
 }
