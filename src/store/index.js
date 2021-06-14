@@ -8,7 +8,7 @@ export default new Vuex.Store({
     //登录成功后的用户名
     UserName: sessionStorage.getItem("username"),
     //控制登录、注册页面的打开和关闭
-    PageStatus: false,
+    PageStatus: "",
   },
   mutations: {
     //获取用户名事件

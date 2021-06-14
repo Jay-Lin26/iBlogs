@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <el-backtop></el-backtop>
     <router-view id="main" />
+    <el-backtop></el-backtop>
+    <Register v-show="this.$store.state.PageStatus"></Register>
     <Thefoot></Thefoot>
   </div>
 </template>
 
 <script>
 import Thefoot from "./components/footer.vue";
+import Register from "./components/register.vue";
 export default {
   name: "app",
-  components: { Thefoot }
+  components: { Thefoot, Register }
 };
 </script>
 

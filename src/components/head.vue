@@ -40,20 +40,16 @@
           </div>
         </div>
         <div class="to-login" v-else>
-          <div class="sign" @click="pageControl()">登录</div>
-          <div class="join" @click="pageControl()">注册</div>
+          <div class="join" @click="pageControl()">登录 & 注册</div>
         </div>
       </div>
-      <Register v-show="this.$store.state.PageStatus"></Register>
     </div>
   </div>
 </template>
 
 <script>
-import Register from "../components/register.vue";
 export default {
   name: "hd",
-  components: { Register },
   data: function () {
     return {
       //是否展示用户名的状态
@@ -187,19 +183,13 @@ export default {
   display: flex;
   color: #afb4db;
 }
-.sign {
-  margin-left: 50px;
-  margin-top: 30px;
-  font-size: 15px;
-  cursor: pointer;
-}
 .join {
   height: 30px;
   width: 98px;
   text-align: center;
   cursor: pointer;
   line-height: 30px;
-  margin-left: 50px;
+  margin-left: 100px;
   margin-top: 25px;
   font-size: 15px;
   border: 1px solid #afb4db;
@@ -212,7 +202,7 @@ export default {
   text-decoration: underline;
 }
 .head-button {
-  width: 300px;
+  width: 340px;
   margin: 0;
   line-height: 80px;
 }

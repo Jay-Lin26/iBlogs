@@ -17,9 +17,9 @@
       </div>
       <div class="beian">
         <div class="ba-icon"></div>
-        <a href="https://beian.miit.gov.cn/" target="_blank">您的备案号</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a>
       </div>
-      <div class="ft-copy">Copyright @ 2020-2021 Linse Designed by Linse</div>
+      <div class="ft-copy">Copyright @ 2020-2021 Designed by Linse</div>
     </div>
   </div>
 </template>

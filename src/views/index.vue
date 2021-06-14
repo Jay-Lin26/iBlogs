@@ -1,5 +1,5 @@
 <template>
-  <div id="myhome">
+  <div id="index">
     <Thehead></Thehead>
     <div class="index-all">
       <div class="index-body">
@@ -115,7 +115,7 @@ export default {
 }
 .show-card:hover {
   transform: translateY(-3%);
-  box-shadow: 3px 3px 3px 3px #afb4db;
+  box-shadow: 2px 2px 2px 2px #ae8e83;
 }
 .show-card {
   width: 1000px;
