@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import { blog_detail } from "../http/api.js";
+import { article_detail } from "../http/api.js";
 import Thehead from "../components/head.vue";
 export default {
   name: "articledetail",
@@ -38,12 +38,12 @@ export default {
   },
   mounted() {
     //获取博客内容
-    blog_detail( this.show_id ).then((result) => {
+    article_detail( this.show_id ).then((result) => {
       if (result.code == '201') {
         this.show_title = result.message;
       }else {
         this.show_title = result.title;
-        this.show_from = '发表于 2021-04-30 | 阅读次数： 20';
+        this.show_from = "阅读次数："+ result.views + " | 发表于" + result.time;
         this.show_content = result.content;
       };
     });

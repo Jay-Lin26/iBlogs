@@ -15,7 +15,9 @@
                   <div class="title">{{ item.title }}</div>
                   <div class="description">{{ item.desc }}</div>
                   <div class="writer">
-                    <div class="w-avatar"></div>
+                    <div class="w-avatar">
+                      <img src="../assets/front-img/avatar.png" />
+                    </div>
                     <div class="w-name">{{ item.writer }}</div>
                     <div class="w-time">发布时间：{{ item.release_time }}</div>
                     <div class="w-look">浏览数：{{ item.view }}</div>
@@ -62,7 +64,13 @@ export default {
 <style>
 .w-tag { margin-left: 230px; border: 1px solid #00b5ad; border-radius: 5px; color: #00b5ad; font-family: "楷体";}
 .w-name, .w-time, .w-look { margin-right: 20px; }
-.w-avatar { width: 24px; height: 24px; border-radius: 50%; background-color: #000; margin-right: 20px;}
+.w-avatar, .w-avatar img{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-size: cover;
+}
 .writer {
   height: 20%;
   bottom: 0px;

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Index from "../views/index";
 import ArticleDetail from "../views/articleDetail";
 import FrontPage from "../views/frontPage";
+import ErrorPage from "../components/error";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,12 @@ const routes = [
     name: "ArticleDetail",
     component: ArticleDetail,
     meta: { title: "文章详情" },
+  },
+  {
+    path: "/error",
+    name: "ErrorPage",
+    component: ErrorPage,
+    meta: { title: "页面找不到了！！！" },
   },
 ];
 
