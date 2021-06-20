@@ -87,7 +87,6 @@ export default {
 
 <style>
 #hd {
-  z-index: 2;
   position: fixed;
   left: 0px;
   top: 0px;
