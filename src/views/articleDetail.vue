@@ -40,7 +40,7 @@ export default {
     //获取博客内容
     article_detail( this.show_id ).then((result) => {
       if (result.code == '201') {
-        this.show_title = result.message;
+        this.$router.push('/error');
       }else {
         this.show_title = result.title;
         this.show_from = "阅读次数："+ result.views + " | 发表于" + result.time;
