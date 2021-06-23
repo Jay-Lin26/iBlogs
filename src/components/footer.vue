@@ -17,7 +17,7 @@
       </div>
       <div class="beian">
         <div class="ba-icon"></div>
-        <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2021011096号</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2021011096号-1</a>
       </div>
       <div class="ft-copy">Copyright @ 2020-2021 Designed by Linse</div>
     </div>
