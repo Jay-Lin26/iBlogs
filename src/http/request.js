@@ -1,5 +1,4 @@
 import axios from "axios";
-import Vue from "vue";
 
 const service = axios.create({
   baseURL: "https://api.iblogs.ltd/",

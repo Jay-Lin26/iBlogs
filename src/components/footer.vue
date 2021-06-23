@@ -79,7 +79,7 @@ export default {
 }
 .ba-icon {
   position: absolute;
-  left: 400px;
+  left: 390px;
   width: 30px;
   height: 30px;
   background: url("../assets/front-icon/备案.png");
