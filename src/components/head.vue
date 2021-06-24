@@ -92,6 +92,7 @@ export default {
   top: 0px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
 }
 #hd,
 .head-box {
