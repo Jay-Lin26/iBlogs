@@ -145,7 +145,6 @@ export default {
   width: 1000px;
   min-height: 100vh;
   margin: 0 auto;
-  margin-top: 80px;
 }
 .index-all {
   overflow: hidden;

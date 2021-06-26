@@ -2,7 +2,7 @@
   <div id="hd">
     <div class="head-box">
       <div class="head-connet">
-        <div class="head-logo">
+        <div class="head-logo" @click="logoClick()">
           <svg width="150" height="60" xmlns="http://www.w3.org/2000/svg">
             <g>
               <title>background</title>
@@ -20,9 +20,9 @@
           </svg>
         </div>
         <div class="head-button">
-          <router-link to="/index">首页</router-link>
-          <router-link to="/articledetail/1" class="sort">文章</router-link>
-          <router-link to="/" class="about">关于我</router-link>
+          <router-link to="/">首页</router-link>
+          <router-link to="/category" class="sort">分类</router-link>
+          <router-link to="/about" class="about">关于我</router-link>
         </div>
         <div class="search">
           <input class="input" placeholder="输入您想查看的内容。。。" />
@@ -75,8 +75,13 @@ export default {
       sessionStorage.clear("username", "accesstoken");
       location.reload();
     },
+    //搜索
     search: function () {
       this.$msgs("暂未开放", "warning");
+    },
+    //logo跳转
+    logoClick: function () {
+      this.$router.push('/');
     },
   },
   mounted() {
@@ -87,11 +92,8 @@ export default {
 
 <style>
 #hd {
-  position: fixed;
-  left: 0px;
-  top: 0px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 998;
 }
 #hd,
@@ -104,6 +106,9 @@ export default {
   height: 80px;
   margin: 0 auto;
   display: flex;
+}
+.head-logo {
+  cursor: pointer;
 }
 .head-logo svg{
   margin-top: 6px;

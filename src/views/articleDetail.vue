@@ -54,13 +54,12 @@ export default {
 <style>
 .body-box {
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   background: url("https://pic.imgdb.cn/item/60bb9bbd8355f7f7189ab84d.jpg");
   background-size: cover;
 }
 .body-content {
   width: 1000px;
-  overflow-x: hidden;
   height: 100%;
   margin: 0 auto;
   margin-top: 25px;
@@ -92,8 +91,5 @@ export default {
   font-family: "微软雅黑";
   letter-spacing: 2px;
   line-height: 30px;
-}
-.body-content {
-  margin-top: 105px;
 }
 </style>

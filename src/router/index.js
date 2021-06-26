@@ -2,7 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "../views/index";
 import ArticleDetail from "../views/articleDetail";
-import FrontPage from "../views/frontPage";
+import Category from "../views/category"
+import About from "../views/about";
 import ErrorPage from "../components/error";
 
 Vue.use(VueRouter);
@@ -15,21 +16,27 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: "/",
-    name: "frontPage",
-    component: FrontPage,
+    name: "index",
+    component: Index,
     meta: { title: "iBlogs" },
   },
   {
-    path: "/index",
-    name: "index",
-    component: Index,
-    meta: { title: "首页" },
+    path: "/about",
+    name: "about",
+    component: About,
+    meta: { title: "关于我" },
   },
   {
     path: "/articledetail/:id",
     name: "ArticleDetail",
     component: ArticleDetail,
     meta: { title: "文章详情" },
+  },
+  {
+    path: "/category",
+    name: "category",
+    component: Category,
+    meta: { title: "分类" },
   },
   {
     path: "/error",

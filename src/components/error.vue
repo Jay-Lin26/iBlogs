@@ -15,6 +15,7 @@ export default {
 
 <style>
 .message {
+    font-family: '楷体';
     text-align: center;
     font-size: 50px;
     color: #00b5ad;

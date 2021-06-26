@@ -42,16 +42,16 @@ export default {
     indexclick: function ( pageNum ) {
       switch (pageNum) {
         case 1:
-          this.$router.push('/index')
+          this.$router.push('/')
           break;
         case 2:
-          this.$router.push('/articledetail/1')
+          this.$router.push('/category')
           break;
         case 3:
           this.$router.push('/')
           break;
         case 4:
-          this.$router.push('/')
+          this.$router.push('/about')
           break;
       }
     },
