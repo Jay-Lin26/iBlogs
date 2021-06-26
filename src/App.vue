@@ -27,6 +27,7 @@ body,
   width: 100%;
   height: 100%;
   font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif !important;
+  z-index: 0;
 }
 .el-message {
   top: 80% !important;

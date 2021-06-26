@@ -139,6 +139,7 @@ export default {
 .index-content {
   width: 100%;
   height: 100%;
+  margin-top: 80px;
 }
 .index-body {
   padding: 20px 0 0 0;
@@ -150,5 +151,6 @@ export default {
   overflow: hidden;
   background: url("https://pic.imgdb.cn/item/60bb99708355f7f71894f8ba.jpg");
   background-size: cover;
+  position: relative;
 }
 </style>

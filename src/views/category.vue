@@ -139,14 +139,14 @@ export default {
     overflow: hidden;
 }
 .body-left {
-    margin: 20px 20px 20px 0;
+    margin: 100px 20px 20px 0;
     float: left;
     width: 280px;
     background-color: #fff;
     border-radius: 10px;
 }
 .body-right {
-    margin: 20px 0 20px 0;
+    margin: 100px 0 20px 0;
     min-height: 100vh;
     float: left;
     width: 700px;

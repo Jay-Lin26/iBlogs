@@ -93,8 +93,9 @@ export default {
 <style>
 #hd {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 8;
+  position: fixed;
 }
 #hd,
 .head-box {
@@ -150,7 +151,7 @@ export default {
   margin-top: 30px;
   font-size: 16px;
   color: #afb4db;
-  margin-left: 110px;
+  margin-left: 100px;
   cursor: pointer;
   position: relative;
 }
