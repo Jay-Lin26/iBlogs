@@ -1,7 +1,7 @@
 import service from "./request.js";
 
 //获取验证码
-export const getCode = function (data) {
+export const getCodeApi = function (data) {
   return service({
     url: "api/v1.0/member/verification/",
     method: "get",
@@ -9,7 +9,7 @@ export const getCode = function (data) {
   });
 };
 //登录
-export const login = function (data) {
+export const loginApi = function (data) {
   return service({
     url: "api/v1.0/member/login/",
     method: "post",
@@ -17,7 +17,7 @@ export const login = function (data) {
   });
 };
 //注册
-export const register = function (data) {
+export const registerApi = function (data) {
   return service({
     url: "api/v1.0/member/register/",
     method: "post",
@@ -26,7 +26,7 @@ export const register = function (data) {
 };
 
 //首页文案
-export const index = function () {
+export const indexApi = function () {
   return service({
     url: "api/v1.0/article/index/",
     method: "get",
@@ -34,10 +34,18 @@ export const index = function () {
 };
 
 //博客详情
-export const article_detail = function ( data ) {
+export const articleDetailApi = function ( data ) {
   return service({
     url: "api/v1.0/article/detail/",
     method: "get",
     params: { article_id: data }
   });
 };
+
+//标签内容
+export const categoryTagApi = function () {
+  return service({
+    url: "api/v1.0/category/tags",
+    method: "get",
+  })
+}

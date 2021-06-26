@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { getCode, login, register } from "../http/api.js";
+import { getCodeApi, loginApi, registerApi } from "../http/api.js";
 export default {
   name: "app",
   data() {
@@ -88,7 +88,7 @@ export default {
       let param = new URLSearchParams();
       param.append("email", this.email);
       param.append("password", this.password);
-      login(param).then((result) => {
+      loginApi(param).then((result) => {
         if (result.code === 200) {
           this.$msgs(result.message, "success");
           sessionStorage.setItem("accesstoken", result.Access_token);
@@ -107,7 +107,7 @@ export default {
       params.append("email", this.email);
       params.append("code", this.code);
       params.append("password", this.password);
-      register(params).then((result) => {
+      registerApi(params).then((result) => {
         if (result.code === 200) {
           this.$msgs(result.message, "success");
         } else {
@@ -117,7 +117,7 @@ export default {
     },
     //发送验证码
     get_code: function () {
-      getCode(this.email).then((result) => {
+      getCodeApi(this.email).then((result) => {
         if (result.code === 200) {
           this.$msgs(result.message, "success");
         } else {

@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import { article_detail } from "../http/api.js";
+import { articleDetailApi } from "../http/api.js";
 import Thehead from "../components/head.vue";
 export default {
   name: "articledetail",
@@ -38,7 +38,7 @@ export default {
   },
   mounted() {
     //获取博客内容
-    article_detail( this.show_id ).then((result) => {
+    articleDetailApi( this.show_id ).then((result) => {
       if (result.code == '201') {
         this.$router.push('/error');
       }else {
@@ -62,7 +62,7 @@ export default {
   width: 1000px;
   height: 100%;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 100px;
 }
 .usershow {
   width: 100%;

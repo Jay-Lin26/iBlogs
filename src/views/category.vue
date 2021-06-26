@@ -5,24 +5,26 @@
           <div class="cg-body">
               <div class="body">
                   <div class="body-left">
-                      <div class="card-l" v-for="a in 3" :key="a">
-                        <div class="left-title">分类</div>
-                        <div class="left-cg" v-for="i in 5" :key="i">
-                            <div class="text">成长记录</div>
+                      <div class="card-l" v-for="item in tag_list" :key="item[0]">
+                        <div class="left-title"> {{ item.type }} </div>
+                        <div class="left-cg" v-for="tags in item.tags" :key="tags.tag_id">
+                            <div class="text"> {{ tags.tag_name }} </div>
                             <div class="number">110</div>
                         </div>
                       </div>
                   </div>
                   <div class="body-right">
                       <div class="main-r">
-                        <div class="title-r">成长记录</div>
-                        <div class="card-r" v-for="b in 10" :key="b">
-                            <div class="card-r-image"></div>
-                            <div class="card-r-text">即使没有人为你鼓掌,也要优雅的谢幕,感谢自己的认真付出。</div>
+                        <div class="title-r">最新推荐</div>
+                        <div class="card-r" v-for="item in article_list" :key="item.id" @click="jumpArticle(item.id)">
+                            <div class="card-r-image">
+                                <!-- <img v-bind:src="item.img_url" /> -->
+                            </div>
+                            <div class="card-r-text">{{ item.desc }}</div>
                             <div class="card-r-from">
                                 <div class="cg-avatar"></div>
-                                <div class="cg-writer">Linse.zhou</div>
-                                <div class="cg-time">2021-12-12</div>
+                                <div class="cg-writer"> {{ item.writer }} </div>
+                                <div class="cg-time"> {{ item.release_time }} </div>
                             </div>
                         </div>
                       </div>
@@ -35,9 +37,29 @@
 
 <script>
 import Thehead from "../components/head.vue"
+import { categoryTagApi, indexApi } from "../http/api.js"
 export default {
     name: "CG",
     components: { Thehead },
+    data: function(){
+      return  {
+          tag_list: "",
+          article_list: ""
+      }
+    },
+    methods: {
+        jumpArticle: function ( show_id ) {
+            this.$router.push('/articledetail/' + show_id)
+        }
+    },
+    mounted() {
+        categoryTagApi().then((result) => {
+            this.tag_list = result.data
+        }),
+        indexApi().then((result) => {
+            this.article_list = result.data
+        })
+    }
 }
 </script>
 
@@ -66,7 +88,6 @@ export default {
 .card-r-text {
     font-size: 14px;
     letter-spacing: 2px;
-    padding: 3px;
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient:vertical;
@@ -105,10 +126,12 @@ export default {
     margin-top: 15px;
 }
 .number {
-    margin-left: 110px;
+    position: absolute;
+    right: 20px;
     color: #00b5ad;
 }
 .left-cg {
+    position: relative;
     display: flex;
     font-size: 16px;
     margin: 15px;
@@ -135,7 +158,7 @@ export default {
     width: 1000px;
     margin: 0 auto;
     min-height: 100vh;
-    opacity: 0.8;
+    opacity: 0.7;
     overflow: hidden;
 }
 .body-left {

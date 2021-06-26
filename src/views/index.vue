@@ -37,7 +37,7 @@
 
 <script>
 import Thehead from "../components/head.vue";
-import { index } from "../http/api.js";
+import { indexApi } from "../http/api.js";
 export default {
   name: "index",
   components: { Thehead },
@@ -53,7 +53,7 @@ export default {
   },
   mounted() {
     //获取首页数据
-    index().then((result) => {
+    indexApi().then((result) => {
       this.leftList = result.data;
     });
     // this.slideshow();
