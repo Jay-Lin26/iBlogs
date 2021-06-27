@@ -22,6 +22,7 @@
         <div class="head-button">
           <router-link to="/">首页</router-link>
           <router-link to="/category" class="sort">分类</router-link>
+          <router-link to="#" class="sort">写文章</router-link>
           <router-link to="/about" class="about">关于我</router-link>
         </div>
         <div class="search">
@@ -116,7 +117,7 @@ export default {
 }
 .input {
   position: absolute;
-  width: 240px;
+  width: 160px;
   height: 35px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -145,7 +146,7 @@ export default {
 }
 .search {
   position: relative;
-  width: 300px;
+  width: 220px;
 }
 .user {
   margin-top: 30px;
@@ -208,7 +209,7 @@ export default {
   text-decoration: underline;
 }
 .head-button {
-  width: 340px;
+  width: 410px;
   margin: 0;
   line-height: 80px;
 }
@@ -216,7 +217,7 @@ export default {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 13px;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 .head-button a:hover {
   color: #afb4db;
