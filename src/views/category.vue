@@ -7,7 +7,7 @@
                   <div class="body-left">
                       <div class="card-l" v-for="item in tag_list" :key="item[0]">
                         <div class="left-title"> {{ item.type }} </div>
-                        <div class="left-cg" v-for="tags in item.tags" :key="tags.tag_id">
+                        <div class="left-cg" v-for="tags in item.tags" :key="tags.tag_id" @click="changeTag(tags.tag_id)">
                             <div class="text"> {{ tags.tag_name }} </div>
                             <div class="number">110</div>
                         </div>
@@ -15,14 +15,14 @@
                   </div>
                   <div class="body-right">
                       <div class="main-r">
-                        <div class="title-r">最新推荐</div>
+                        <div class="title-r"> {{ tag_name }} </div>
                         <div class="card-r" v-for="item in article_list" :key="item.id" @click="jumpArticle(item.id)">
                             <div class="card-r-image">
-                                <!-- <img v-bind:src="item.img_url" /> -->
+                                <img v-bind:src="item.img_url" />
                             </div>
-                            <div class="card-r-text">{{ item.desc }}</div>
+                            <div class="card-r-text">{{ item.title }}</div>
                             <div class="card-r-from">
-                                <div class="cg-avatar"></div>
+                                <div class="cg-avatar"><img v-bind:src="item.avatar" /></div>
                                 <div class="cg-writer"> {{ item.writer }} </div>
                                 <div class="cg-time"> {{ item.release_time }} </div>
                             </div>
@@ -37,26 +37,35 @@
 
 <script>
 import Thehead from "../components/head.vue"
-import { categoryTagApi, indexApi } from "../http/api.js"
+import { categoryTagApi, tagDetailApi } from "../http/api.js"
 export default {
     name: "CG",
     components: { Thehead },
     data: function(){
       return  {
           tag_list: "",
-          article_list: ""
+          article_list: "",
+          tag_name: ""
       }
     },
     methods: {
         jumpArticle: function ( show_id ) {
             this.$router.push('/articledetail/' + show_id)
+        },
+        changeTag: function ( tag_id ) {
+            tagDetailApi( tag_id ).then((result) => {
+                this.tag_name = result.tag_name
+                this.article_list = result.data
+            })
         }
+
     },
     mounted() {
         categoryTagApi().then((result) => {
             this.tag_list = result.data
         }),
-        indexApi().then((result) => {
+        tagDetailApi( 1 ).then((result) => {
+            this.tag_name = result.tag_name
             this.article_list = result.data
         })
     }
@@ -70,11 +79,10 @@ export default {
 .cg-writer {
     margin-left: 5px;
 }
-.cg-avatar {
+.cg-avatar img{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: url("../assets/front-img/avatar.png");
     background-size: cover;
 }
 .card-r-from {
@@ -94,10 +102,9 @@ export default {
     -webkit-line-clamp:2;
     text-overflow:clip;
 }
-.card-r-image {
+.card-r-image img{
     width: 200px;
     height: 200px;
-    background: url("https://pic.imgdb.cn/item/60d6b25d844ef46bb27986ed.jpg");
     background-size: cover;
 }
 .card-r {
@@ -170,7 +177,6 @@ export default {
 }
 .body-right {
     margin: 100px 0 20px 0;
-    min-height: 100vh;
     float: left;
     width: 700px;
     background-color: #fff;

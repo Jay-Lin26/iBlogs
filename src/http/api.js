@@ -42,10 +42,18 @@ export const articleDetailApi = function ( data ) {
   });
 };
 
-//标签内容
+//标签分类
 export const categoryTagApi = function () {
   return service({
     url: "api/v1.0/category/tags",
     method: "get",
+  })
+}
+//标签详情
+export const tagDetailApi = function ( data ) {
+  return service({
+    url: "api/v1.0/category/detail",
+    method: "get",
+    params: { tag_id: data }
   })
 }

@@ -16,7 +16,7 @@
                   <div class="description">{{ item.desc }}</div>
                   <div class="writer">
                     <div class="w-avatar">
-                      <img src="../assets/front-img/avatar.png" />
+                      <img v-bind:src="item.avatar" />
                     </div>
                     <div class="w-name">{{ item.writer }}</div>
                     <div class="w-time">发布时间：{{ item.release_time }}</div>
@@ -25,7 +25,7 @@
                   </div>
                 </div>
                 <div class="image">
-                  <img v-bind:src="item.img_url" />
+                  <img :src="item.img_url" />
                 </div>
               </div>
             </div>
@@ -44,6 +44,7 @@ export default {
   data: function () {
     return {
       leftList: {},
+      avatarUrl: "",
     };
   },
   methods: {
@@ -64,11 +65,11 @@ export default {
 <style>
 .w-tag { margin-left: 230px; border: 1px solid #00b5ad; border-radius: 5px; color: #00b5ad; font-family: "楷体";}
 .w-name, .w-time, .w-look { margin-right: 20px; }
-.w-avatar, .w-avatar img{
+.w-avatar img{
   width: 24px;
   height: 24px;
+  margin-right: 5px;
   border-radius: 50%;
-  margin-right: 20px;
   background-size: cover;
 }
 .writer {

@@ -171,7 +171,7 @@ export default {
   margin: 0 auto;
   margin-bottom: 20px;
   border-radius: 50%;
-  background: url("../assets/front-img/avatar.png");
+  background: url("https://pic.imgdb.cn/item/60bc8d6e8355f7f718acaf97.png");
   background-size: cover;
 }
 .box {
