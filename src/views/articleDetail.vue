@@ -59,7 +59,7 @@ export default {
   background-size: cover;
 }
 .body-content {
-  width: 1000px;
+  width: 900px;
   height: 100%;
   margin: 0 auto;
   margin-top: 100px;
@@ -77,13 +77,13 @@ export default {
 }
 .usershow h4 {
   font-size: 13px;
-  color: #00b5ad;
+  color: #afb4db;
 }
 .usershow p {
   font-size: 10px;
 }
 .content {
-  color: #909399;
+  color: #65686d;
   padding-left: 50px;
   padding-right: 30px;
   min-height: 100vh;

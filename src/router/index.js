@@ -1,10 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Index from "../views/index";
-import ArticleDetail from "../views/articleDetail";
-import Category from "../views/category"
-import About from "../views/about";
-import ErrorPage from "../components/error";
 
 Vue.use(VueRouter);
 
@@ -17,31 +12,37 @@ const routes = [
   {
     path: "/",
     name: "index",
-    component: Index,
+    component: () => import("@/views/index"),
     meta: { title: "iBlogs" },
   },
   {
     path: "/about",
     name: "about",
-    component: About,
+    component: () => import("@/views/about"),
     meta: { title: "关于我" },
   },
   {
     path: "/articledetail/:id",
     name: "ArticleDetail",
-    component: ArticleDetail,
+    component: () => import("@/views/articleDetail"),
     meta: { title: "文章详情" },
   },
   {
     path: "/category",
     name: "category",
-    component: Category,
+    component: () => import("@/views/category"),
     meta: { title: "分类" },
+  },
+  {
+    path: "/search/:name",
+    name: "search",
+    component: () => import("@/views/search"),
+    meta: { title: "搜索" },
   },
   {
     path: "/error",
     name: "ErrorPage",
-    component: ErrorPage,
+    component: () => import("@/views/error"),
     meta: { title: "页面找不到了！！！" },
   },
 ];

@@ -124,7 +124,7 @@ export default {
 }
 .show-card:hover {
   transform: translateY(-3%);
-  box-shadow: 2px 2px 2px 2px #ae8e83;
+  box-shadow: 2px 2px 2px 2px #eeeeee;
 }
 .show-card {
   width: 1000px;

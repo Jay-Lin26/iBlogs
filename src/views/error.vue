@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Thehead from "./head.vue"
+import Thehead from "../components/head.vue"
 export default {
     name: 'EP',
     components: { Thehead }

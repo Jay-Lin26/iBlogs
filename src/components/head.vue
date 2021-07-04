@@ -26,8 +26,8 @@
           <router-link to="/about" class="about">关于我</router-link>
         </div>
         <div class="search">
-          <input class="input" placeholder="输入您想查看的内容。。。" />
-          <button class="btn" @click="search()"></button>
+          <input class="input" placeholder="输入您想查看的内容。。。" v-model="searchContent"/>
+          <button class="btn" @click="search( searchContent )"></button>
         </div>
         <div class="user" v-if="whetheLogin">
           {{ this.$store.state.UserName }}
@@ -55,6 +55,7 @@ export default {
     return {
       //是否展示用户名的状态
       whetheLogin: false,
+      searchContent: ''
     };
   },
   methods: {
@@ -77,8 +78,12 @@ export default {
       location.reload();
     },
     //搜索
-    search: function () {
-      this.$msgs("暂未开放", "warning");
+    search: function ( content ) {
+      if ( Number(content) < 1 ) {
+        this.$msgs("请输入您想要查询的内容！", "success")
+      }else{
+        this.$router.push('/search/' + content)
+      }
     },
     //logo跳转
     logoClick: function () {
