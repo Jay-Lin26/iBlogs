@@ -3,7 +3,7 @@ import service from "./request.js";
 //获取验证码
 export const getCodeApi = function (data) {
   return service({
-    url: "api/v1.0/member/verification/",
+    url: "/member/verification/",
     method: "get",
     params: { email: data },
   });
@@ -11,7 +11,7 @@ export const getCodeApi = function (data) {
 //登录
 export const loginApi = function (data) {
   return service({
-    url: "api/v1.0/member/login/",
+    url: "/member/login/",
     method: "post",
     data,
   });
@@ -19,7 +19,7 @@ export const loginApi = function (data) {
 //注册
 export const registerApi = function (data) {
   return service({
-    url: "api/v1.0/member/register/",
+    url: "/member/register/",
     method: "post",
     data,
   });
@@ -28,7 +28,7 @@ export const registerApi = function (data) {
 //首页文案
 export const indexApi = function () {
   return service({
-    url: "api/v1.0/article/index/",
+    url: "/article/index/",
     method: "get",
   });
 };
@@ -36,7 +36,7 @@ export const indexApi = function () {
 //博客详情
 export const articleDetailApi = function ( data ) {
   return service({
-    url: "api/v1.0/article/detail/",
+    url: "/article/detail/",
     method: "get",
     params: { article_id: data }
   });
@@ -45,14 +45,14 @@ export const articleDetailApi = function ( data ) {
 //标签分类
 export const categoryTagApi = function () {
   return service({
-    url: "api/v1.0/category/tags",
+    url: "/category/tags",
     method: "get",
   })
 }
 //标签详情
 export const tagDetailApi = function ( data ) {
   return service({
-    url: "api/v1.0/category/detail",
+    url: "/category/detail",
     method: "get",
     params: { tag_id: data }
   })
