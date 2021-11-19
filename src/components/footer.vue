@@ -32,7 +32,7 @@ export default {
 <style>
 #ft {
   background-color: rgba(0, 0, 0, 0.9);
-  border-top: 1px solid #eee;
+  border-top: 1px solid #FFBBFF;
   font-family: "STXihei";
 }
 .ft-box {
@@ -52,6 +52,10 @@ export default {
   line-height: 25px;
   word-break: break-word;
 }
+.ft-des :hover{
+  color: #FFBBFF;
+  cursor: pointer;
+}
 .ft-image div {
   width: 110px;
   height: 110px;
@@ -65,7 +69,7 @@ export default {
   height: 110px;
 }
 .ft-copy {
-  color: #f1f1f1;
+  color: #FFBBFF;
   height: 30px;
   line-height: 30px;
   text-align: center;
@@ -89,6 +93,6 @@ export default {
 }
 .beian a {
   text-decoration: none;
-  color: #d5a13d;
+  color: #FFBBFF;
 }
 </style>

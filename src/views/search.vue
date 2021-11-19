@@ -4,7 +4,7 @@
       <div class="sh-main">
           <div class="sh-box">
               <div class="sh-content">
-                  <div class="ct-text">搜索内容：{{ content }} >>></div>
+                  <div class="ct-text">搜索内容：{{ content }}</div>
               </div>
           </div>
       </div>

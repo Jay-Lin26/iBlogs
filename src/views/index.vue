@@ -2,6 +2,9 @@
   <div id="index">
     <Thehead></Thehead>
     <div class="index-all">
+      <div id="rc" class="rotation-chart">
+        <div v-for="item in bannerList" v-bind:key="item.id"><img class="active" v-bind:src="item.url" /></div>
+      </div>
       <div class="index-body">
         <div class="index-content">
             <div
@@ -44,25 +47,68 @@ export default {
   data: function () {
     return {
       leftList: {},
+      bannerList: {},
       avatarUrl: "",
     };
   },
   methods: {
+    // 进入详情
     showdetail: function (show_id) {
       this.$router.push('/articledetail/' + show_id)
     },
+    // 定时器
+    setTimer: function () {
+      this.$nextTick(()=>{
+        let pic = document.getElementById('rc').getElementsByTagName("div");
+        for (let i=0; i<pic.length; i++) {
+          if (i = pic.length) {
+            i = 0
+          }
+          this.time = setInterval(() => {
+              pic[i-1].style.zIndex = 0;
+              pic[i].style.zIndex = 1000;
+          }, 3000)
+       }
+        })
+    }
   },
   mounted() {
     //获取首页数据
     indexApi().then((result) => {
       this.leftList = result.data;
+      this.bannerList = result.banner
     });
-    // this.slideshow();
+    //启动定时器
+    setTimeout(() => {
+      this.setTimer()
+    },500)
+
   },
+  beforeDestroy() {
+      clearInterval(this.time);
+  }
 };
 </script>
 
 <style>
+.active {
+  border-radius: 10px;
+  height: 230px;
+  width: 1000px;
+  background: no-repeat;
+  background-size: cover;
+}
+#rc div{
+  width: 1000px;
+  height: 230px;
+  position: absolute;
+}
+.rotation-chart {
+  width: 1000px;
+  height: 230px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
 .w-tag { margin-left: 230px; border: 1px solid #00b5ad; border-radius: 5px; color: #00b5ad; font-family: "楷体";}
 .w-name, .w-time, .w-look { margin-right: 20px; }
 .w-avatar img{
@@ -140,7 +186,6 @@ export default {
 .index-content {
   width: 100%;
   height: 100%;
-  margin-top: 80px;
 }
 .index-body {
   padding: 20px 0 0 0;
@@ -152,6 +197,6 @@ export default {
   overflow: hidden;
   background: url("https://pic.imgdb.cn/item/60bb99708355f7f71894f8ba.jpg");
   background-size: cover;
-  position: relative;
+  /* position: relative; */
 }
 </style>
