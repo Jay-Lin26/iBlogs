@@ -2,8 +2,15 @@
   <div id="index">
     <Thehead></Thehead>
     <div class="index-all">
-      <div id="rc" class="rotation-chart">
-        <div v-for="item in bannerList" v-bind:key="item.id"><img class="active" v-bind:src="item.url" /></div>
+      <div class="rotation-chart">
+        <div id="pic">
+          <li v-for="item in bannerList" v-bind:key="item.id"><img v-bind:src="item.url"></li>
+        </div>
+        <div class="indicator">
+          <div v-for="item in bannerList" v-bind:key="item.id"></div>
+        </div>
+        <div class="rcbtn-left" @click="movePic()"></div>
+        <div class="rcbtn-right"></div>
       </div>
       <div class="index-body">
         <div class="index-content">
@@ -48,7 +55,7 @@ export default {
     return {
       leftList: {},
       bannerList: {},
-      avatarUrl: "",
+      index: 0,
     };
   },
   methods: {
@@ -56,20 +63,17 @@ export default {
     showdetail: function (show_id) {
       this.$router.push('/articledetail/' + show_id)
     },
-    // 定时器
-    setTimer: function () {
-      this.$nextTick(()=>{
-        let pic = document.getElementById('rc').getElementsByTagName("div");
-        for (let i=0; i<pic.length; i++) {
-          if (i = pic.length) {
-            i = 0
-          }
-          this.time = setInterval(() => {
-              pic[i-1].style.zIndex = 0;
-              pic[i].style.zIndex = 1000;
-          }, 3000)
-       }
-        })
+    // 图片轮播方法
+    movePic: function () {
+      this.index += 1;
+      let img = document.getElementById('pic');
+      let pic = document.getElementById('pic').getElementsByTagName('li');
+      img.style.transform = 'translateX(' + -1000*this.index + 'px)';
+      img.style.animation = "mymove 2s infinite";
+      if (this.index > pic.length) {
+        this.index = 1
+      }
+      img.removeAttribute("animation");
     }
   },
   mounted() {
@@ -78,36 +82,77 @@ export default {
       this.leftList = result.data;
       this.bannerList = result.banner
     });
-    //启动定时器
-    setTimeout(() => {
-      this.setTimer()
-    },500)
 
   },
-  beforeDestroy() {
-      clearInterval(this.time);
-  }
 };
 </script>
 
 <style>
-.active {
-  border-radius: 10px;
-  height: 230px;
+.rcbtn-left,.rcbtn-right {
+  cursor: pointer;
+  opacity: 0.3;
+}
+.rcbtn-left {
+  position: absolute;
+  top: 40%;
+  left: 20px;
+  display: inline;
+  width: 20px;
+  height: 60px;
+  background-color: #00b5ad;
+}
+.rcbtn-right {
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  display: inline;
+  width: 20px;
+  height: 60px;
+  background-color: #00b5ad;
+}
+.indicator div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  opacity: 0.9;
+  margin-right: 10px;
+  float: left;
+}
+.indicator {
+  width: 150px;
+  height: 20px;
+  position: absolute;
+  top: 210px;
+  left: 45%;
+}
+#pic li img {
   width: 1000px;
-  background: no-repeat;
+  height: 240px;
   background-size: cover;
 }
-#rc div{
+#pic li{
+  list-style: none;
   width: 1000px;
-  height: 230px;
-  position: absolute;
+  height: 240px;
+}
+#pic {
+  width: auto;
+  height: 240px;
+  position: relative;
+  display: flex;
+}
+@-webkit-keyframes mymove {
+  from {right:0px;}
+  to {right:1000px}
 }
 .rotation-chart {
   width: 1000px;
-  height: 230px;
+  height: 240px;
   margin: 0 auto;
   margin-top: 100px;
+  position: relative;
+  overflow: hidden;
 }
 .w-tag { margin-left: 230px; border: 1px solid #00b5ad; border-radius: 5px; color: #00b5ad; font-family: "楷体";}
 .w-name, .w-time, .w-look { margin-right: 20px; }
@@ -197,6 +242,5 @@ export default {
   overflow: hidden;
   background: url("https://pic.imgdb.cn/item/60bb99708355f7f71894f8ba.jpg");
   background-size: cover;
-  /* position: relative; */
 }
 </style>
