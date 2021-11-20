@@ -74,6 +74,7 @@ export default {
         this.index = 1
       }
       img.removeAttribute("animation");
+      
     }
   },
   mounted() {
