@@ -9,8 +9,8 @@
         <div class="indicator">
           <div v-for="item in bannerList" v-bind:key="item.id"></div>
         </div>
-        <div class="rcbtn-left" @click="movePic()"></div>
-        <div class="rcbtn-right"></div>
+        <div class="rcbtn-left" @click="movePic('left')"><</div>
+        <div class="rcbtn-right" @click="movePic('right')">></div>
       </div>
       <div class="index-body">
         <div class="index-content">
@@ -55,7 +55,7 @@ export default {
     return {
       leftList: {},
       bannerList: {},
-      index: 0,
+      index: 1,
     };
   },
   methods: {
@@ -64,17 +64,21 @@ export default {
       this.$router.push('/articledetail/' + show_id)
     },
     // 图片轮播方法
-    movePic: function () {
-      this.index += 1;
+    movePic: function ( direction ) {
       let img = document.getElementById('pic');
       let pic = document.getElementById('pic').getElementsByTagName('li');
-      img.style.transform = 'translateX(' + -1000*this.index + 'px)';
-      img.style.animation = "mymove 2s infinite";
-      if (this.index > pic.length) {
-        this.index = 1
+      if (direction == "left") {
+        this.index ++;
+        img.style.transform = 'translateX(' + -1000*this.index + 'px)';
+      }if (direction == "right") {
+        this.index ++;
+        img.style.transform = 'translateX(' + -1000*this.index + 'px)';
+      }
+      // img.style.animation = "mymove 2s infinite";
+      if (this.index > pic.length-2) {
+        this.index = -1
       }
       img.removeAttribute("animation");
-      
     }
   },
   mounted() {
@@ -90,8 +94,13 @@ export default {
 
 <style>
 .rcbtn-left,.rcbtn-right {
+  font-size: 30px;
+  font-weight: 200;
   cursor: pointer;
   opacity: 0.3;
+  line-height: 60px;
+  transform: scale(1,2);
+  -webkit-transform: scale(1,2);
 }
 .rcbtn-left {
   position: absolute;
@@ -100,7 +109,6 @@ export default {
   display: inline;
   width: 20px;
   height: 60px;
-  background-color: #00b5ad;
 }
 .rcbtn-right {
   position: absolute;
@@ -109,23 +117,28 @@ export default {
   display: inline;
   width: 20px;
   height: 60px;
-  background-color: #00b5ad;
+}
+.indicator div:hover{
+  background-color: #FFAAFF;
 }
 .indicator div {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #f1f1f1;
+  background-color: #FFBBFF;
   opacity: 0.9;
-  margin-right: 10px;
-  float: left;
+  margin: 10px;
+  cursor: pointer;
 }
 .indicator {
-  width: 150px;
+  width: 120px;
   height: 20px;
   position: absolute;
-  top: 210px;
-  left: 45%;
+  top: 215px;
+  left: 42%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 #pic li img {
   width: 1000px;
