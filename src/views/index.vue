@@ -3,35 +3,60 @@
     <Thehead></Thehead>
     <div class="index-all">
       <div class="rotation-chart">
-        <div id="pic">
-          <li v-for="item in bannerList" v-bind:key="item.id"><img v-bind:src="item.url"></li>
+        <div
+					id="pic"
+					@mouseover="mouseOver()"
+					@mouseout="mouseLeave()"
+				>
+          <li
+						v-for="item in bannerList"
+						:key="item.id"
+					>
+            <img :src="item.url">
+          </li>
         </div>
-        <div class="indicator">
-          <div v-for="item in bannerList" v-bind:key="item.id"></div>
+        <div id="indicator">
+          <div
+						:class="{active: idx == index-1}"
+						v-for="(item, idx) in bannerList"
+						:key="idx"
+						@click="indClick(idx)"
+					>
+					</div>
         </div>
-        <div class="rcbtn-left" @click="movePic('left')"><</div>
-        <div class="rcbtn-right" @click="movePic('right')">></div>
+        <div
+					class="rcbtn-left"
+					@click="movePic('left')"
+				>
+					<
+				</div>
+        <div
+					class="rcbtn-right"
+					@click="movePic('right')"
+				>
+					>
+				</div>
       </div>
       <div class="index-body">
         <div class="index-content">
             <div
-              class="show-card"
-              v-for="item in leftList"
-              v-bind:key="item.id"
-              @click="showdetail( item.id )"
-            >
+							class="show-card"
+							v-for="item in leftList"
+							v-bind:key="item.id"
+							@click="showdetail( item.id )"
+						>
               <div class="card-in">
                 <div class="detail">
-                  <div class="title">{{ item.title }}</div>
-                  <div class="description">{{ item.desc }}</div>
+                  <div class="title"> {{ item.title }} </div>
+                  <div class="description"> {{ item.desc }} </div>
                   <div class="writer">
                     <div class="w-avatar">
                       <img v-bind:src="item.avatar" />
                     </div>
-                    <div class="w-name">{{ item.writer }}</div>
-                    <div class="w-time">发布时间：{{ item.release_time }}</div>
-                    <div class="w-look">浏览数：{{ item.view }}</div>
-                    <div class="w-tag">博客系统开发</div>
+                    <div class="w-name"> {{ item.writer }} </div>
+                    <div class="w-time"> 发布时间：{{ item.release_time }} </div>
+                    <div class="w-look"> 浏览数：{{ item.view }} </div>
+                    <div class="w-tag"> 博客系统开发 </div>
                   </div>
                 </div>
                 <div class="image">
@@ -56,7 +81,11 @@ export default {
       leftList: {},
       bannerList: {},
       index: 1,
+			timer: null
     };
+  },
+  computed: {
+
   },
   methods: {
     // 进入详情
@@ -71,9 +100,7 @@ export default {
         this.index --;
       }if (direction == "right") {
         this.index ++;
-      }
-      img.style.transition = `transform 1s`;
-      img.style.transform = `translateX(${-1000*(this.index - 1)}px)`;
+      }else { }
       if (this.index > pic.length) {
         img.style.transition = `transform 0.2s`;
         img.style.transform = `translateX(0px)`;
@@ -83,7 +110,29 @@ export default {
         img.style.transform = `translateX(${-1000*(pic.length - 1)}px)`
         this.index = pic.length;
       }
-    }
+      img.style.transition = `transform 1s`;
+      img.style.transform = `translateX(${-1000*(this.index - 1)}px)`;
+    },
+    // 指示器点击跳转对应图片
+    indClick: function ( index ) {
+			let img = document.getElementById('pic');
+			img.style.transition = `transform 1s`;
+      img.style.transform = `translateX(${-1000*index}px)`;
+			this.index = index+1;
+    },
+		//启动定时器轮播
+		timeFun: function() {
+			this.timer = setInterval(() => {
+				this.movePic("right");
+			}, 3000)
+		},
+		//鼠标移入清除定时器
+		mouseOver: function() {
+			clearInterval(this.timer)
+		},
+		mouseLeave: function() {
+			this.timeFun()
+		}
   },
   mounted() {
     //获取首页数据
@@ -91,8 +140,13 @@ export default {
       this.leftList = result.data;
       this.bannerList = result.banner
     });
-
+		//加载启动定时器
+		this.timeFun()
   },
+	beforeDestroy() {
+		//清除定时器轮播
+		clearInterval(this.timer)
+	}
 };
 </script>
 
@@ -122,10 +176,13 @@ export default {
   width: 20px;
   height: 60px;
 }
-.indicator div:hover{
-  background-color: #FFAAFF;
+.active {
+  background-color: #fff !important;
 }
-.indicator div {
+#indicator div:hover{
+  background-color: #fff;
+}
+#indicator div {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -134,15 +191,16 @@ export default {
   margin: 10px;
   cursor: pointer;
 }
-.indicator {
-  width: 120px;
+#indicator {
+  width: auto;
   height: 20px;
   position: absolute;
   top: 215px;
-  left: 42%;
+  right: 38%;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  border-radius: 8px;
+  background-color:#aaaeb2;
 }
 #pic li img {
   width: 1000px;
