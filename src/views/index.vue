@@ -28,7 +28,7 @@
 					class="rcbtn-left"
 					@click="movePic('left')"
 				>
-					<
+					{{ left }}
 				</div>
         <div
 					class="rcbtn-right"
@@ -81,7 +81,8 @@ export default {
       leftList: {},
       bannerList: {},
       index: 1,
-			timer: null
+			timer: null,
+			left: "<"
     };
   },
   computed: {
