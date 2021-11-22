@@ -68,17 +68,21 @@ export default {
       let img = document.getElementById('pic');
       let pic = document.getElementById('pic').getElementsByTagName('li');
       if (direction == "left") {
-        this.index ++;
-        img.style.transform = 'translateX(' + -1000*this.index + 'px)';
+        this.index --;
       }if (direction == "right") {
         this.index ++;
-        img.style.transform = 'translateX(' + -1000*this.index + 'px)';
       }
-      // img.style.animation = "mymove 2s infinite";
-      if (this.index > pic.length-2) {
-        this.index = -1
+      img.style.transition = `transform 1s`;
+      img.style.transform = `translateX(${-1000*(this.index - 1)}px)`;
+      if (this.index > pic.length) {
+        img.style.transition = `transform 0.2s`;
+        img.style.transform = `translateX(0px)`;
+        this.index = 1;
+      }if (this.index <= 0) {
+        img.style.transition = `transform 0.2s`;
+        img.style.transform = `translateX(${-1000*(pic.length - 1)}px)`
+        this.index = pic.length;
       }
-      img.removeAttribute("animation");
     }
   },
   mounted() {
@@ -155,10 +159,6 @@ export default {
   height: 240px;
   position: relative;
   display: flex;
-}
-@-webkit-keyframes mymove {
-  from {right:0px;}
-  to {right:1000px}
 }
 .rotation-chart {
   width: 1000px;
