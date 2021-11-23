@@ -15,7 +15,7 @@
               <title>Layer 1</title>
               <text font-style="italic" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, serif" font-size="162" id="svg_1" y="235.5" x="60.523438" stroke-width="0" stroke="#000" fill="#afb4db">iBlogs</text>
               <text stroke="#000" transform="matrix(1,0,0,1.0285714864730835,0,-0.9174125734716654) " xml:space="preserve" text-anchor="start" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, serif" font-size="26" id="svg_2" y="24.109375" x="61" stroke-width="0" fill="#afb4db"/>
-              <text font-style="italic" font-weight="bold" stroke="#000" transform="matrix(0.9181492679094418,0,0,1.063895586343823,0.14804763657391762,20.564003545175524) " xml:space="preserve" text-anchor="start" font-family="Georgia, Times, 'Times New Roman', serif" font-size="40" id="svg_3" y="23.995114" x="14.396078" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#FFBBFF">iBlogs</text>
+              <text font-style="italic" font-weight="bold" stroke="#000" transform="matrix(0.9181492679094418,0,0,1.063895586343823,0.14804763657391762,20.564003545175524) " xml:space="preserve" text-anchor="start" font-family="Georgia, Times, 'Times New Roman', serif" font-size="40" id="svg_3" y="23.995114" x="14.396078" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#0FB4A9">iBlogs</text>
             </g>
           </svg>
         </div>
@@ -126,13 +126,13 @@ export default {
   height: 35px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  border: 1px solid #FFBBFF;
+  border: 1px solid #0FB4A9;
   padding-left: 20px;
   outline: 0;
   top: 20px;
 }
 .btn:hover {
-  background-color: #FFAAFF;
+  background-color: #13DBCE;
 }
 .btn {
   position: absolute;
@@ -141,10 +141,10 @@ export default {
   height: 39px;
   top: 20px;
   right: 0px;
-  border: 0 solid #FFBBFF;
+  border: 0 solid #0FB4A9;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  background: url("../assets/front-img/search.png") #FFBBFF;
+  background: url("../assets/front-img/search.png") #0FB4A9;
   background-size: cover;
   color: rgba(0, 0, 0, 0);
   outline: 0;
@@ -156,13 +156,13 @@ export default {
 .user {
   margin-top: 30px;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #13DBCE;
   margin-left: 100px;
   cursor: pointer;
   position: relative;
 }
 .user:hover .menu {
-  color: #FFAAFF;
+  color: #13DBCE;
   display: block;
 }
 .menu {
@@ -170,8 +170,8 @@ export default {
   position: absolute;
   top: 30px;
   left: -10px;
-  background-color: #FFAAFF;
-  border: 1px solid #FFAAFF;
+  background-color: #FFF;
+  border: 1px solid #FFF;
   border-radius: 5px;
 }
 .menu-nav {
@@ -179,11 +179,11 @@ export default {
   font-size: 14px;
   width: 100px;
   text-align: center;
-  color: #000;
+  color: #0FB4A9;
   list-style: none;
 }
 .menu-nav li:hover {
-  background-color: #FFAAFF;
+  background-color: #0FB4A9;
   color: #000;
 }
 .menu-nav li {
@@ -193,7 +193,7 @@ export default {
 }
 .to-login {
   display: flex;
-  color: #FFBBFF;
+  color: #0FB4A9;
 }
 .join {
   height: 30px;
@@ -204,11 +204,11 @@ export default {
   margin-left: 100px;
   margin-top: 25px;
   font-size: 15px;
-  border: 1px solid #FFBBFF;
-  color: #FFBBFF;
+  border: 1px solid #0FB4A9;
+  color: #0FB4A9;
 }
 .join:hover {
-  color: #FFAAFF;
+  color: #13DBCE;
 }
 .sign:hover {
   text-decoration: underline;
@@ -225,6 +225,6 @@ export default {
   margin-left: 30px;
 }
 .head-button a:hover {
-  color: #FFAAFF;
+  color: #0FB4A9;
 }
 </style>

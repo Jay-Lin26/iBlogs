@@ -23,8 +23,8 @@ body,
   width: 100%;
   margin: 0 !important;
 }
-/* 主题色 #FFBBFF
-   悬浮色 #FFAAFF
+/* 主题色 #0FB4A9
+   悬浮色 #13DBCE
 */
 #main {
   width: 100%;
@@ -38,6 +38,6 @@ body,
   font-family: Calibri !important;
 }
 .el-backtop {
-  color: #FF66FF;
+  color: #0FB4A9;
 }
 </style>

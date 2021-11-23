@@ -9,30 +9,38 @@
 					@mouseout="mouseLeave()"
 				>
           <li
-						v-for="item in bannerList"
+						v-for="(item) in bannerList"
 						:key="item.id"
 					>
             <img :src="item.url">
           </li>
         </div>
-        <div id="indicator">
+        <div
+          id="indicator"
+          @mouseover="mouseOver()"
+					@mouseout="mouseLeave()"
+        >
           <div
-						:class="{active: idx == index-1}"
 						v-for="(item, idx) in bannerList"
 						:key="idx"
 						@click="indClick(idx)"
+            :class="{active: idx == index-1}"
 					>
 					</div>
         </div>
         <div
 					class="rcbtn-left"
 					@click="movePic('left')"
+          @mouseover="mouseOver()"
+					@mouseout="mouseLeave()"
 				>
 					{{ left }}
 				</div>
         <div
 					class="rcbtn-right"
 					@click="movePic('right')"
+          @mouseover="mouseOver()"
+					@mouseout="mouseLeave()"
 				>
 					>
 				</div>
@@ -97,27 +105,26 @@ export default {
     movePic: function ( direction ) {
       let img = document.getElementById('pic');
       let pic = document.getElementById('pic').getElementsByTagName('li');
+
       if (direction == "left") {
         this.index --;
       }if (direction == "right") {
         this.index ++;
-      }else { }
+      }
+
       if (this.index > pic.length) {
-        img.style.transition = `transform 0.2s`;
         img.style.transform = `translateX(0px)`;
         this.index = 1;
       }if (this.index <= 0) {
-        img.style.transition = `transform 0.2s`;
-        img.style.transform = `translateX(${-1000*(pic.length - 1)}px)`
+        img.style.transform = `translateX(${-1000*(pic.length - 1)}px)`;
         this.index = pic.length;
       }
-      img.style.transition = `transform 1s`;
+
       img.style.transform = `translateX(${-1000*(this.index - 1)}px)`;
     },
     // 指示器点击跳转对应图片
     indClick: function ( index ) {
 			let img = document.getElementById('pic');
-			img.style.transition = `transform 1s`;
       img.style.transform = `translateX(${-1000*index}px)`;
 			this.index = index+1;
     },
@@ -131,6 +138,7 @@ export default {
 		mouseOver: function() {
 			clearInterval(this.timer)
 		},
+    // 鼠标移出开启定时器
 		mouseLeave: function() {
 			this.timeFun()
 		}
@@ -158,6 +166,7 @@ export default {
   cursor: pointer;
   opacity: 0.3;
   line-height: 60px;
+  color: #fff;
   transform: scale(1,2);
   -webkit-transform: scale(1,2);
 }
@@ -178,16 +187,16 @@ export default {
   height: 60px;
 }
 .active {
-  background-color: #fff !important;
+  background-color: #0FB4A9 !important;
 }
 #indicator div:hover{
-  background-color: #fff;
+  background-color: #0FB4A9;
 }
 #indicator div {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #FFBBFF;
+  background-color: #F1F1F1;
   opacity: 0.9;
   margin: 10px;
   cursor: pointer;
@@ -201,7 +210,7 @@ export default {
   display: flex;
   align-items: center;
   border-radius: 8px;
-  background-color:#aaaeb2;
+  background-color:#AAAEB2;
 }
 #pic li img {
   width: 1000px;
@@ -219,6 +228,12 @@ export default {
   position: relative;
   display: flex;
 }
+.rotation-chart:hover .rcbtn-right{
+  color: #0FB4A9;
+}
+.rotation-chart:hover .rcbtn-left{
+  color: #0FB4A9;
+}
 .rotation-chart {
   width: 1000px;
   height: 240px;
@@ -227,7 +242,7 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.w-tag { margin-left: 230px; border: 1px solid #00b5ad; border-radius: 5px; color: #00b5ad; font-family: "楷体";}
+.w-tag { margin-left: 230px; border: 1px solid #0FB4A9; border-radius: 5px; color: #0FB4A9; font-family: "楷体";}
 .w-name, .w-time, .w-look { margin-right: 20px; }
 .w-avatar img{
   width: 24px;
@@ -293,7 +308,7 @@ export default {
 .show-card {
   width: 1000px;
   height: 200px;
-  background-color: #fff;
+  background-color: #FFFFFF;
   opacity: 0.8;
   transition: all 0.5s;
   margin-bottom: 20px;

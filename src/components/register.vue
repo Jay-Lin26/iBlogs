@@ -34,7 +34,7 @@
           <div style="font-size: 14px">
             <label style="margin-right: 15px">已有账号？</label>
             <label
-              style="color: #FFBBFF; cursor: pointer"
+              style="color: #0FB4A9; cursor: pointer"
               @click="joinPage = !joinPage"
               >登录</label
             >
@@ -43,13 +43,13 @@
         <div v-else>
           <button class="l-btn" @click="login()">登录</button>
           <div style="font-size: 14px">
-            <div style="color: #FFBBFF; cursor: pointer; margin-bottom: 24px">
+            <div style="color: #0FB4A9; cursor: pointer; margin-bottom: 24px">
               忘记密码？
             </div>
             <div>
               <label style="margin-right: 15px">没有账号？</label>
               <label
-                style="color: #FFBBFF; cursor: pointer"
+                style="color: #0FB4A9; cursor: pointer"
                 @click="joinPage = !joinPage"
                 >注册账号</label
               >
@@ -141,7 +141,6 @@ export default {
   margin-bottom: 24px;
 }
 .cancel:hover {
-  background-color: #FFAAFF;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -150,14 +149,14 @@ export default {
   right: 24px;
   width: 20px;
   height: 20px;
-  border: 0px solid #FFBBFF;
+  border: 0px solid;
   background: url("../assets/front-img/cancel.png");
   background-size: cover;
 }
 .r-btn:hover,
 .l-btn:hover,
 .c-btn:hover {
-  background-color: #FFAAFF;
+  background-color: #13DBCE;
 }
 .c-btn {
   cursor: pointer;
@@ -166,7 +165,7 @@ export default {
   border: 1px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  background-color: #FFBBFF;
+  background-color: #0FB4A9;
   color: #f1f1f1;
   outline: 0;
 }
@@ -177,7 +176,7 @@ export default {
   height: 40px;
   border-radius: 4px;
   border: 1px;
-  background-color: #FFBBFF;
+  background-color: #0FB4A9;
   color: #f1f1f1;
   margin-bottom: 24px;
   padding: 0 !important;
@@ -188,7 +187,7 @@ export default {
   height: 40px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  border: 1px solid #FFBBFF;
+  border: 1px solid #0FB4A9;
   margin-bottom: 24px;
   padding: 2px 0 0 20px;
   outline: 0;
@@ -196,14 +195,14 @@ export default {
 .alert-code::-webkit-input-placeholder,
 .alert-pwd::-webkit-input-placeholder,
 .alert-email::-webkit-input-placeholder {
-  color: #FFBBFF;
+  color: #0FB4A9;
 }
 .alert-email,
 .alert-pwd {
   width: 276px;
   height: 40px;
   border-radius: 4px;
-  border: 1px solid #FFBBFF;
+  border: 1px solid #0FB4A9;
   margin-bottom: 24px;
   padding-left: 20px;
   outline: 0;
