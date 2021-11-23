@@ -45,6 +45,7 @@
 					>
 				</div>
       </div>
+      <div class="all-title"> {{ title }} </div>
       <div class="index-body">
         <div class="index-content">
             <div
@@ -54,6 +55,9 @@
 							@click="showdetail( item.id )"
 						>
               <div class="card-in">
+                <div class="image">
+                  <img :src="item.img_url" />
+                </div>
                 <div class="detail">
                   <div class="title"> {{ item.title }} </div>
                   <div class="description"> {{ item.desc }} </div>
@@ -67,12 +71,10 @@
                     <div class="w-tag"> 博客系统开发 </div>
                   </div>
                 </div>
-                <div class="image">
-                  <img :src="item.img_url" />
-                </div>
               </div>
             </div>
         </div>
+        <div class="index-content-right"></div>
       </div>
     </div>
   </div>
@@ -90,7 +92,8 @@ export default {
       bannerList: {},
       index: 1,
 			timer: null,
-			left: "<"
+			left: "<",
+      title: "—— 推荐 ——"
     };
   },
   computed: {
@@ -160,11 +163,19 @@ export default {
 </script>
 
 <style>
+.all-title {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
 .rcbtn-left,.rcbtn-right {
   font-size: 30px;
   font-weight: 200;
   cursor: pointer;
-  opacity: 0.3;
+  opacity: 0.5;
   line-height: 60px;
   color: #fff;
   transform: scale(1,2);
@@ -205,12 +216,13 @@ export default {
   width: auto;
   height: 20px;
   position: absolute;
-  top: 215px;
+  top: 210px;
   right: 38%;
   display: flex;
   align-items: center;
   border-radius: 8px;
   background-color:#AAAEB2;
+  opacity: 0.5;
 }
 #pic li img {
   width: 1000px;
@@ -237,12 +249,13 @@ export default {
 .rotation-chart {
   width: 1000px;
   height: 240px;
+  border-radius: 10px;
   margin: 0 auto;
   margin-top: 100px;
   position: relative;
   overflow: hidden;
 }
-.w-tag { margin-left: 230px; border: 1px solid #0FB4A9; border-radius: 5px; color: #0FB4A9; font-family: "楷体";}
+.w-tag { margin-left: 90px; border: 1px solid #0FB4A9; border-radius: 5px; color: #0FB4A9; font-family: "楷体";}
 .w-name, .w-time, .w-look { margin-right: 20px; }
 .w-avatar img{
   width: 24px;
@@ -253,6 +266,7 @@ export default {
 }
 .writer {
   height: 20%;
+  width: 500px;
   bottom: 0px;
   font-size: 12px;
   align-items: center;
@@ -261,7 +275,7 @@ export default {
 }
 .description {
   height: auto;
-  width: 660px;
+  width: 500px;
   font-size: 13px;
   font-weight: 200;
   letter-spacing: 3px;
@@ -285,16 +299,17 @@ export default {
 .image,
 .image img {
   height: 160px;
-  width: 280px;
+  width: 160px;
   border-radius: 10px;
   background-size: cover;
 }
 .detail {
-  width: 680px;
+  margin-left: 10px;
+  width: 500px;
   height: 160px;
 }
 .card-in {
-  width: 960px;
+  width: 660px;
   margin: 0 auto;
   display: flex;
   position: absolute;
@@ -306,7 +321,7 @@ export default {
   box-shadow: 2px 2px 2px 2px #eeeeee;
 }
 .show-card {
-  width: 1000px;
+  width: 700px;
   height: 200px;
   background-color: #FFFFFF;
   opacity: 0.8;
@@ -316,9 +331,17 @@ export default {
   position: relative;
   cursor: pointer;
 }
+.index-content-right {
+  width: 280px;
+  height: 1000px;
+  background-color: #FFFFFF;
+  float: right;
+  border-radius: 10px;
+}
 .index-content {
-  width: 100%;
+  width: 700px;
   height: 100%;
+  float: left;
 }
 .index-body {
   padding: 20px 0 0 0;
