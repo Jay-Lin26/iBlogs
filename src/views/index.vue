@@ -11,6 +11,7 @@
           <li
 						v-for="(item) in bannerList"
 						:key="item.id"
+            @click="showDetail(item.track_id)"
 					>
             <img :src="item.url">
           </li>
@@ -52,7 +53,7 @@
 							class="show-card"
 							v-for="item in leftList"
 							v-bind:key="item.id"
-							@click="showdetail( item.id )"
+							@click="showDetail( item.id )"
 						>
               <div class="card-in">
                 <div class="image">
@@ -74,7 +75,18 @@
               </div>
             </div>
         </div>
-        <div class="index-content-right"></div>
+        <div class="index-content-right">
+          <div class="right-title">{{rightTitle}}</div>
+          <div
+            class="index-content-right-card"
+            v-for="item in otherList"
+            :key="item.id"
+            @click="otherDetail(item.id)"
+          >
+            <li>{{item.title}}</li>
+            <li>{{ item.desc }}</li>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -90,19 +102,25 @@ export default {
     return {
       leftList: {},
       bannerList: {},
+      otherList: {},
       index: 1,
 			timer: null,
 			left: "<",
-      title: "—— 推荐 ——"
+      title: "—— 推荐 ——",
+      rightTitle: "—— 每日趣闻"
     };
   },
   computed: {
 
   },
   methods: {
-    // 进入详情
-    showdetail: function (show_id) {
+    // 进入文章详情
+    showDetail: function (show_id) {
       this.$router.push('/articledetail/' + show_id)
+    },
+    //进入趣闻详情
+    otherDetail: function (other_id) {
+      this.$router.push('/articledetail/' + other_id)
     },
     // 图片轮播方法
     movePic: function ( direction ) {
@@ -149,8 +167,9 @@ export default {
   mounted() {
     //获取首页数据
     indexApi().then((result) => {
-      this.leftList = result.data;
-      this.bannerList = result.banner
+      this.leftList = result.article;
+      this.bannerList = result.banner;
+      this.otherList = result.otherArticle;
     });
 		//加载启动定时器
 		this.timeFun()
@@ -163,6 +182,26 @@ export default {
 </script>
 
 <style>
+.index-content-right-card li {
+  list-style: none;
+  margin: 10px;
+  display: -webkit-box;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 300;
+  font-family: "mircroft yahei";
+  overflow: hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  text-overflow:clip;
+}
+.right-title {
+  margin: 20px 0 20px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "kaiti";
+  color: #0FB4A9;
+}
 .all-title {
   width: 200px;
   margin: 0 auto;
@@ -201,7 +240,7 @@ export default {
   background-color: #0FB4A9 !important;
 }
 #indicator div:hover{
-  background-color: #0FB4A9;
+  background-color: #AAAEB2;
 }
 #indicator div {
   width: 10px;
@@ -217,7 +256,7 @@ export default {
   height: 20px;
   position: absolute;
   top: 210px;
-  right: 38%;
+  right: 45%;
   display: flex;
   align-items: center;
   border-radius: 8px;
@@ -239,6 +278,7 @@ export default {
   height: 240px;
   position: relative;
   display: flex;
+  transition: all 0.5s;
 }
 .rotation-chart:hover .rcbtn-right{
   color: #0FB4A9;
@@ -318,7 +358,7 @@ export default {
 }
 .show-card:hover {
   transform: translateY(-3%);
-  box-shadow: 2px 2px 2px 2px #eeeeee;
+  box-shadow: 2px 2px 2px 2px #504c4c;
 }
 .show-card {
   width: 700px;
@@ -331,12 +371,22 @@ export default {
   position: relative;
   cursor: pointer;
 }
+.index-content-right-card {
+  width: 240px;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #0FB4A9;
+}
 .index-content-right {
   width: 280px;
-  height: 1000px;
-  background-color: #FFFFFF;
+  height: auto;
   float: right;
   border-radius: 10px;
+  background-color: #FFFFFF;
+  opacity: 0.8;
 }
 .index-content {
   width: 700px;

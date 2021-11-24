@@ -5,9 +5,19 @@
           <div class="cg-body">
               <div class="body">
                   <div class="body-left">
-                      <div class="card-l" v-for="item in tag_list" :key="item[0]">
+                      <div
+                        class="card-l"
+                        v-for="(item) in tag_list"
+                        :key="item[0]"
+                      >
                         <div class="left-title"> {{ item.type }} </div>
-                        <div class="left-cg" v-for="tags in item.tags" :key="tags.tag_id" @click="changeTag(tags.tag_id)">
+                        <div
+                            class="left-cg"
+                            v-for="tags in item.tags"
+                            :key="tags.tag_id"
+                            @click="changeTag(tags.tag_id)"
+                            :class="{cgActive: tags.tag_id == index}"
+                        >
                             <div class="text"> {{ tags.tag_name }} </div>
                             <div class="number">110</div>
                         </div>
@@ -45,7 +55,8 @@ export default {
       return  {
           tag_list: "",
           article_list: "",
-          tag_name: ""
+          tag_name: "",
+          index: 1
       }
     },
     methods: {
@@ -56,6 +67,7 @@ export default {
             tagDetailApi( tag_id ).then((result) => {
                 this.tag_name = result.tag_name
                 this.article_list = result.data
+                this.index = tag_id
             })
         }
 
@@ -73,6 +85,9 @@ export default {
 </script>
 
 <style>
+.cgActive {
+    color: #0FB4A9;
+}
 .cg-time {
     margin-left: 36px;
 }

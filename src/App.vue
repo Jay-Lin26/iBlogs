@@ -31,6 +31,10 @@ body,
   height: 100%;
   font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif !important;
   z-index: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .el-message {
   top: 80% !important;
