@@ -45,6 +45,22 @@ const routes = [
     component: () => import("@/views/error"),
     meta: { title: "页面找不到了！！！" },
   },
+  {
+    path: "/bms/",
+    name: "bms",
+    component: () => import("@/views/bms"),
+    meta: { title: "页面找不到了！！！" },
+    children: [
+      {
+        path: 'pageone',
+        component: () => import("@/components/bms/table"),
+      },
+      {
+        path: 'pagetwo',
+        component: () => import("@/components/bms/tabletwo"),
+      },
+    ]
+  },
 ];
 
 const router = new VueRouter({

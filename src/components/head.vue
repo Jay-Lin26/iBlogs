@@ -22,15 +22,15 @@
         <div class="head-button">
           <router-link to="/">首页</router-link>
           <router-link to="/category" class="sort">分类</router-link>
-          <router-link to="#" class="sort">写文章</router-link>
+          <router-link to="/bms" class="sort">后台</router-link>
           <router-link to="/about" class="about">关于我</router-link>
         </div>
         <div class="search">
           <input class="input" placeholder="输入您想查看的内容。。。" v-model="searchContent"/>
           <button class="btn" @click="search( searchContent )"></button>
         </div>
-        <div class="user" v-if="whetheLogin">
-          {{ this.$store.state.UserName }}
+        <div class="user" v-if="this.$store.state.username">
+          {{ this.$store.state.username }}
           <i class="el-icon-arrow-down"></i>
           <div class="menu">
             <ul class="menu-nav">
@@ -49,23 +49,16 @@
 </template>
 
 <script>
+import Cookies from "js-cookie"
 export default {
   name: "hd",
   data: function () {
     return {
       //是否展示用户名的状态
-      whetheLogin: false,
       searchContent: ''
     };
   },
   methods: {
-    //判断用户是否登录
-    judgeUser: function () {
-      let name = this.$store.state.UserName;
-      if (name != null) {
-        this.whetheLogin = true;
-      }
-    },
     //打开或关闭登录、注册页面
     pageControl: function () {
       let status = true;
@@ -74,7 +67,7 @@ export default {
     //退出登录
     quitLogin: function () {
       this.$msgs("您已退出登录", "success");
-      sessionStorage.clear("username", "accesstoken");
+      Cookies.remove("username", "accesstoken");
       location.reload();
     },
     //搜索
@@ -91,7 +84,7 @@ export default {
     },
   },
   mounted() {
-    this.judgeUser();
+
   },
 };
 </script>

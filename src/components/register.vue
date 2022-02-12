@@ -70,6 +70,7 @@
 
 <script>
 import { getCodeApi, loginApi, registerApi } from "../http/api.js";
+import Cookies from 'js-cookie';
 export default {
   name: "app",
   data() {
@@ -91,8 +92,8 @@ export default {
       loginApi(param).then((result) => {
         if (result.code === 200) {
           this.$msgs(result.message, "success");
-          sessionStorage.setItem("accesstoken", result.Access_token);
-          this.$store.commit("setname", result.name);
+          Cookies.set("username", result.name)
+          Cookies.set("accesstoken", result.Access_token)
           setInterval(function () {
             location.reload();
           }, 100);
