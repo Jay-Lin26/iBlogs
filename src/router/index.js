@@ -48,7 +48,7 @@ const routes = [
   {
     path: "/bms/",
     name: "bms",
-    component: () => import("@/views/bms"),
+    component: () => import("@/views/background/bms"),
     meta: { title: "页面找不到了！！！" },
     children: [
       {

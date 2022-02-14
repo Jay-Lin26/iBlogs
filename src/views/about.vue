@@ -26,12 +26,15 @@
         </div>
       </div>
     </div>
+    <Thefoot></Thefoot>
   </div>
 </template>
 
 <script>
+import Thefoot from "../components/footer.vue";
 export default {
   name: "frontpage",
+  components: { Thefoot },
   data: function () {
     return {
       myName: "Linse Zhou",

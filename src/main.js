@@ -4,8 +4,8 @@ import router from "./router";
 import store from "./store";
 import message from "./utils/common";
 import { Backtop, Icon, Container, Button, Table, TableColumn, Aside, Menu, Submenu, MenuItemGroup, MenuItem, DropdownItem, Header, Main, Dropdown, DropdownMenu,
-         Input,
-        } from "element-ui"; 
+         Input, Pagination, Form, FormItem, Select, OptionGroup, Option
+        } from "element-ui";
 
 Vue.use(Backtop)
 Vue.use(Icon)
@@ -24,6 +24,12 @@ Vue.use(Main)
 Vue.use(Dropdown)
 Vue.use(DropdownMenu)
 Vue.use(Input)
+Vue.use(Pagination)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Select)
+Vue.use(OptionGroup)
+Vue.use(Option)
 Vue.prototype.$msgs = message.msgBox
 Vue.config.productionTip = false
 
