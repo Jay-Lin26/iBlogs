@@ -99,7 +99,7 @@
 </template>
 
 <script>
-import { indexApi } from "../../http/api.js";
+import { articleListApi } from "../../http/api.js";
 export default {
     name: "page-one",
     data:()=>{
@@ -118,9 +118,10 @@ export default {
     },
     methods: {
       getData: function(){
-        indexApi().then((result) => {
+        articleListApi().then((result) => {
           this.tableData = result.article
-          this.total = result.article.length
+          this.total = result.total
+          console.log(this.tableData)
         })
       },
       onSubmit() {
@@ -152,6 +153,6 @@ export default {
   margin-top: 20px;
 }
 .el-table__fixed-right {
-  right: 0px;
+  right: 0 !important
 }
 </style>

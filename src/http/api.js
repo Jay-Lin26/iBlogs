@@ -57,3 +57,10 @@ export const tagDetailApi = function ( data ) {
     params: { tag_id: data }
   })
 }
+//文章列表
+export const articleListApi = function ( data ) {
+  return service({
+    url: "/article/list",
+    method: "get",
+  })
+}
