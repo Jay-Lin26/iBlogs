@@ -1,18 +1,18 @@
 <template>
   <div class="table">
     <el-form :inline="true" :model="formInline" class="demo-form-inline">
-      <el-form-item label="标题：">
+      <el-form-item label="标题:">
         <el-input v-model="formInline.title" placeholder="标题" size="small"></el-input>
       </el-form-item>
-      <el-form-item label="描述：">
+      <el-form-item label="描述:">
         <el-input v-model="formInline.desc" placeholder="描述" size="small"></el-input>
       </el-form-item>
-      <!-- <el-form-item label="描述">
-        <el-select v-model="formInline.region" placeholder="活动区域">
-          <el-option label="区域一" value="shanghai"></el-option>
-          <el-option label="区域二" value="beijing"></el-option>
+      <el-form-item label="分类:">
+        <el-select v-model="formInline.region" placeholder="活动区域" size="small">
+          <el-option label="文章" value="shanghai"></el-option>
+          <el-option label="趣闻" value="beijing"></el-option>
         </el-select>
-      </el-form-item> -->
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit" size="small">查询</el-button>
       </el-form-item>
@@ -21,7 +21,8 @@
     <el-table
     :data="tableData"
     border
-    style="width: 100%">
+    style="width: 100%"
+    max-height="925">
       <el-table-column
         fixed
         prop="id"
@@ -139,37 +140,18 @@ export default {
 </script>
 
 <style>
-.el-container {
-  overflow: auto;
-}
-.el-container::-webkit-scrollbar{
-	width: 6px;
-}
-.el-container::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: rgba(0,0,0,0.2);
-}
+
 .cell {
-    /* 超过多少行自动隐藏 */
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   text-overflow:clip;
 }
-.el-table__body-wrapper::-webkit-scrollbar{
-	height: 8px;
-}
-.el-table__body-wrapper::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: rgba(0,0,0,0.2);
-}
 .el-pagination {
-  position: absolute;
-  bottom: 20px;
+  margin-top: 20px;
 }
-.el-form {
-  /* position: absolute;
-  top: 120px; */
+.el-table__fixed-right {
+  right: 0px;
 }
 </style>
